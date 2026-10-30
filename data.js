@@ -1,0 +1,445 @@
+// Kosakata & tema. Pinyin ditulis per suku kata (satu suku kata per hanzi; nama Latin = satu kata).
+const W = 320, H = 180;
+const CHILD = 'Russel';
+const NAMES = { dad: 'Henry', mom: 'Anna', teacher: 'Sari', meimei: 'Evelyn', xiaoyu: 'Beverly', lele: 'Tjuan', tiantian: 'Arthur' };
+
+const WORDS = {
+  // Hewan peliharaan
+  dog: ['小狗', 'xiǎo gǒu', 'anak anjing'],
+  doudou: ['豆豆', 'Dòu dou', 'Dòudou, anjing Russel'],
+  woof: ['汪汪', 'wāng wāng', 'guk guk'],
+  cat: ['小猫', 'xiǎo māo', 'anak kucing'],
+  meow: ['喵喵', 'miāo miāo', 'meong'],
+  // Sekolah & teman
+  school: ['学校', 'xué xiào', 'sekolah'],
+  teacher: ['老师', 'lǎo shī', 'guru (Bu ' + NAMES.teacher + ')'],
+  friend: ['朋友', 'péng you', 'teman'],
+  meimei: [NAMES.meimei, NAMES.meimei, NAMES.meimei + ', teman sekolah'],
+  lele: [NAMES.lele, NAMES.lele, NAMES.lele + ', teman sekolah'],
+  ball: ['球', 'qiú', 'bola'],
+  slide: ['滑梯', 'huá tī', 'perosotan'],
+  swing: ['秋千', 'qiū qiān', 'ayunan'],
+  board: ['黑板', 'hēi bǎn', 'papan tulis'],
+  // Makanan
+  rice: ['米饭', 'mǐ fàn', 'nasi'],
+  noodles: ['面条', 'miàn tiáo', 'mi'],
+  dumpling: ['饺子', 'jiǎo zi', 'pangsit'],
+  bun: ['包子', 'bāo zi', 'bakpao'],
+  egg: ['鸡蛋', 'jī dàn', 'telur'],
+  milk: ['牛奶', 'niú nǎi', 'susu'],
+  fish: ['鱼', 'yú', 'ikan'],
+  water: ['水', 'shuǐ', 'air'],
+  yummy: ['好吃', 'hǎo chī', 'enak'],
+  // Bunga
+  flower: ['花', 'huā', 'bunga'],
+  petal: ['花瓣', 'huā bàn', 'kelopak bunga'],
+  pistil: ['花心', 'huā xīn', 'tengah bunga'],
+  leaf: ['叶子', 'yè zi', 'daun'],
+  stem: ['花茎', 'huā jīng', 'batang bunga'],
+  root: ['根', 'gēn', 'akar'],
+  butterfly: ['蝴蝶', 'hú dié', 'kupu-kupu'],
+  // Hewan ternak
+  chicken: ['鸡', 'jī', 'ayam'],
+  cluck: ['咯咯哒', 'gē gē dā', 'petok petok'],
+  cow: ['牛', 'niú', 'sapi'],
+  moo: ['哞', 'mōu', 'mooo'],
+  sheep: ['羊', 'yáng', 'domba'],
+  baa: ['咩', 'miē', 'mbeek'],
+  duck: ['鸭子', 'yā zi', 'bebek'],
+  quack: ['嘎嘎', 'gā gā', 'kwek kwek'],
+  // Kebun
+  seed: ['种子', 'zhǒng zi', 'biji'],
+  watering: ['浇水', 'jiāo shuǐ', 'menyiram'],
+  sprout: ['发芽', 'fā yá', 'bertunas'],
+  carrot: ['胡萝卜', 'hú luó bo', 'wortel'],
+  tomato: ['西红柿', 'xī hóng shì', 'tomat'],
+  watermelon: ['西瓜', 'xī guā', 'semangka'],
+  corn: ['玉米', 'yù mǐ', 'jagung'],
+  apple: ['苹果', 'píng guǒ', 'apel'],
+  appletree: ['苹果树', 'píng guǒ shù', 'pohon apel'],
+  // Cuaca
+  sunny: ['晴天', 'qíng tiān', 'cerah'],
+  sun: ['太阳', 'tài yáng', 'matahari'],
+  cloudy: ['多云', 'duō yún', 'berawan'],
+  rain: ['下雨', 'xià yǔ', 'hujan'],
+  windy: ['刮风', 'guā fēng', 'berangin'],
+  snow: ['下雪', 'xià xuě', 'turun salju'],
+  // Pagi & malam
+  morning: ['早上', 'zǎo shang', 'pagi'],
+  night: ['晚上', 'wǎn shang', 'malam'],
+  moon: ['月亮', 'yuè liang', 'bulan'],
+  star: ['星星', 'xīng xing', 'bintang'],
+  goodmorning: ['早上好', 'zǎo shang hǎo', 'selamat pagi'],
+  goodevening: ['晚上好', 'wǎn shang hǎo', 'selamat malam'],
+  goodnight: ['晚安', 'wǎn ān', 'selamat tidur'],
+  // Warna
+  red: ['红色', 'hóng sè', 'merah'],
+  yellow: ['黄色', 'huáng sè', 'kuning'],
+  blue: ['蓝色', 'lán sè', 'biru'],
+  green: ['绿色', 'lǜ sè', 'hijau'],
+  pink: ['粉色', 'fěn sè', 'merah muda'],
+  purple: ['紫色', 'zǐ sè', 'ungu'],
+  orange: ['橙色', 'chéng sè', 'oranye'],
+  white: ['白色', 'bái sè', 'putih'],
+  // Angka
+  n1: ['一', 'yī', 'satu'], n2: ['二', 'èr', 'dua'], n3: ['三', 'sān', 'tiga'],
+  n4: ['四', 'sì', 'empat'], n5: ['五', 'wǔ', 'lima'], n6: ['六', 'liù', 'enam'],
+  n7: ['七', 'qī', 'tujuh'], n8: ['八', 'bā', 'delapan'], n9: ['九', 'jiǔ', 'sembilan'],
+  n10: ['十', 'shí', 'sepuluh'],
+  count: ['数一数', 'shǔ yi shǔ', 'ayo berhitung'],
+  great: ['好棒', 'hǎo bàng', 'hebat!'],
+  // Kendaraan
+  car: ['汽车', 'qì chē', 'mobil'],
+  bus: ['公共汽车', 'gōng gòng qì chē', 'bus'],
+  bike: ['自行车', 'zì xíng chē', 'sepeda'],
+  train: ['火车', 'huǒ chē', 'kereta api'],
+  boat: ['船', 'chuán', 'perahu'],
+  plane: ['飞机', 'fēi jī', 'pesawat'],
+  // Keluarga
+  dad: ['爸爸', 'bà ba', 'ayah (' + NAMES.dad + ')'],
+  mom: ['妈妈', 'mā ma', 'ibu (' + NAMES.mom + ')'],
+  grandpa: ['爷爷', 'yé ye', 'kakek'],
+  grandma: ['奶奶', 'nǎi nai', 'nenek'],
+  me: [CHILD, CHILD, CHILD],
+  // Tubuh
+  head: ['头', 'tóu', 'kepala'],
+  hair: ['头发', 'tóu fa', 'rambut'],
+  eyes: ['眼睛', 'yǎn jing', 'mata'],
+  ears: ['耳朵', 'ěr duo', 'telinga'],
+  nose: ['鼻子', 'bí zi', 'hidung'],
+  mouth: ['嘴巴', 'zuǐ ba', 'mulut'],
+  hand: ['手', 'shǒu', 'tangan'],
+  tummy: ['肚子', 'dù zi', 'perut'],
+  foot: ['脚', 'jiǎo', 'kaki'],
+  // Perasaan
+  happy: ['开心', 'kāi xīn', 'senang'],
+  sad: ['难过', 'nán guò', 'sedih'],
+  angry: ['生气', 'shēng qì', 'marah'],
+  scared: ['害怕', 'hài pà', 'takut'],
+  sleepy: ['困', 'kùn', 'mengantuk'],
+  // Pakaian
+  hat: ['帽子', 'mào zi', 'topi'],
+  shirt: ['衣服', 'yī fu', 'baju'],
+  pants: ['裤子', 'kù zi', 'celana'],
+  shoes: ['鞋子', 'xié zi', 'sepatu'],
+  scarf: ['围巾', 'wéi jīn', 'syal'],
+  umbrella: ['雨伞', 'yǔ sǎn', 'payung'],
+  // Rutinitas
+  wakeup: ['起床', 'qǐ chuáng', 'bangun tidur'],
+  brush: ['刷牙', 'shuā yá', 'sikat gigi'],
+  wash: ['洗手', 'xǐ shǒu', 'cuci tangan'],
+  eat: ['吃饭', 'chī fàn', 'makan'],
+  sleep: ['睡觉', 'shuì jiào', 'tidur'],
+  // Sapaan
+  hello: ['你好', 'nǐ hǎo', 'halo'],
+  helloteacher: [NAMES.teacher + '老师好', NAMES.teacher + ' lǎo shī hǎo', 'halo, Bu ' + NAMES.teacher],
+  thanks: ['谢谢', 'xiè xie', 'terima kasih'],
+  welcome: ['不客气', 'bú kè qi', 'sama-sama'],
+  bye: ['再见', 'zài jiàn', 'sampai jumpa'],
+  sorry: ['对不起', 'duì bu qǐ', 'maaf'],
+  itsok: ['没关系', 'méi guān xi', 'tidak apa-apa'],
+  // Tempat
+  home: ['家', 'jiā', 'rumah'],
+  farm: ['农场', 'nóng chǎng', 'pertanian'],
+  village: ['村子', 'cūn zi', 'desa'],
+  office: ['办公室', 'bàn gōng shì', 'kantor'],
+  mountain: ['山', 'shān', 'gunung'],
+  map: ['地图', 'dì tú', 'peta'],
+  // Kantor Ayah
+  computer: ['电脑', 'diàn nǎo', 'komputer'],
+  phone: ['电话', 'diàn huà', 'telepon'],
+  hellophone: ['喂', 'wéi', 'halo (di telepon)'],
+  book: ['书', 'shū', 'buku'],
+  clock: ['钟', 'zhōng', 'jam dinding'],
+  auntie: ['阿姨', 'ā yí', 'tante'],
+  uncle: ['叔叔', 'shū shu', 'om / paman'],
+  // Pegunungan
+  waterfall: ['瀑布', 'pù bù', 'air terjun'],
+  river: ['河', 'hé', 'sungai'],
+  rock: ['石头', 'shí tou', 'batu'],
+  rabbit: ['兔子', 'tù zi', 'kelinci'],
+  squirrel: ['松鼠', 'sōng shǔ', 'tupai'],
+  bird: ['小鸟', 'xiǎo niǎo', 'burung kecil'],
+  mushroom: ['蘑菇', 'mó gu', 'jamur'],
+  tree: ['树', 'shù', 'pohon'],
+  cloud: ['云', 'yún', 'awan'],
+  // Bermain
+  playtogether: ['一起玩', 'yì qǐ wán', 'main bersama'],
+  jumprope: ['跳绳', 'tiào shéng', 'lompat tali'],
+  tiantian: [NAMES.tiantian, NAMES.tiantian, NAMES.tiantian + ', teman sekolah'],
+  xiaoyu: [NAMES.xiaoyu, NAMES.xiaoyu, NAMES.xiaoyu + ', teman sekolah'],
+  // Kantor (tambahan)
+  aquarium: ['鱼缸', 'yú gāng', 'akuarium'],
+  laptop: ['笔记本电脑', 'bǐ jì běn diàn nǎo', 'laptop'],
+  q_son: ['你是' + NAMES.dad + '的儿子吗？', 'nǐ shì ' + NAMES.dad + ' de ér zi ma', 'Kamu anaknya ' + NAMES.dad + '?'],
+  a_son: ['是的！我叫' + CHILD + '。', 'shì de wǒ jiào ' + CHILD, 'Iya! Namaku ' + CHILD + '.'],
+  // Pantai
+  beach: ['海边', 'hǎi biān', 'pantai'],
+  sea: ['大海', 'dà hǎi', 'laut'],
+  wave: ['海浪', 'hǎi làng', 'ombak'],
+  sand: ['沙子', 'shā zi', 'pasir'],
+  shell: ['贝壳', 'bèi ké', 'kerang'],
+  starfish: ['海星', 'hǎi xīng', 'bintang laut'],
+  crab: ['螃蟹', 'páng xiè', 'kepiting'],
+  seagull: ['海鸥', 'hǎi ōu', 'burung camar'],
+  sandcastle: ['沙堡', 'shā bǎo', 'istana pasir'],
+  palm: ['椰子树', 'yē zi shù', 'pohon kelapa'],
+  parasol: ['遮阳伞', 'zhē yáng sǎn', 'payung pantai'],
+  q_sea: ['你喜欢大海吗？', 'nǐ xǐ huan dà hǎi ma', 'Kamu suka laut?'],
+  // Tas
+  bag: ['书包', 'shū bāo', 'tas'],
+  take: ['拿', 'ná', 'ambil'],
+  give: ['给', 'gěi', 'beri'],
+  giveyou: ['给你！', 'gěi nǐ', 'Ini untukmu!'],
+  throw: ['扔', 'rēng', 'lempar'],
+  bagfull: ['书包满了', 'shū bāo mǎn le', 'tasnya penuh'],
+  towhom: ['给谁？', 'gěi shéi', 'diberikan ke siapa?'],
+  cannoteat: ['不能吃！', 'bù néng chī', 'tidak boleh dimakan!'],
+  wildflower: ['野花', 'yě huā', 'bunga liar'],
+  // Tambahan
+  fun: ['好玩', 'hǎo wán', 'seru!'],
+  gate: ['门', 'mén', 'pintu'],
+  opengate: ['开门', 'kāi mén', 'buka pintu'],
+  closegate: ['关门', 'guān mén', 'tutup pintu'],
+  dragonboat: ['龙舟', 'lóng zhōu', 'perahu naga'],
+  dragon: ['龙', 'lóng', 'naga'],
+  back: ['返回', 'fǎn huí', 'kembali'],
+  // Ruang kelas
+  classroom: ['教室', 'jiào shì', 'ruang kelas'],
+  desk: ['桌子', 'zhuō zi', 'meja'],
+  chair: ['椅子', 'yǐ zi', 'kursi'],
+  sitdown: ['坐下', 'zuò xià', 'duduk'],
+  pencil: ['铅笔', 'qiān bǐ', 'pensil'],
+  crayon: ['蜡笔', 'là bǐ', 'krayon'],
+  piano: ['钢琴', 'gāng qín', 'piano'],
+  window: ['窗户', 'chuāng hu', 'jendela'],
+  q_study: ['你喜欢上学吗？', 'nǐ xǐ huan shàng xué ma', 'Kamu suka sekolah?'],
+  // Mini game berhitung
+  howmany: ['有几个？', 'yǒu jǐ gè', 'ada berapa?'],
+  // Murid, piano, kereta
+  classmate: ['同学', 'tóng xué', 'teman sekelas'],
+  playpiano: ['弹钢琴', 'tán gāng qín', 'main piano'],
+  follow: ['跟我弹', 'gēn wǒ tán', 'ikuti aku'],
+  sing: ['唱歌', 'chàng gē', 'bernyanyi'],
+  listenagain: ['再听一次', 'zài tīng yí cì', 'dengar sekali lagi'],
+  yourturn: ['该你了', 'gāi nǐ le', 'giliranmu'],
+  // Rumah hewan
+  barn: ['动物的家', 'dòng wù de jiā', 'rumah hewan'],
+  milkcow: ['挤牛奶', 'jǐ niú nǎi', 'memerah susu'],
+  shear: ['剪羊毛', 'jiǎn yáng máo', 'mencukur bulu domba'],
+  wool: ['羊毛', 'yáng máo', 'bulu domba'],
+  hay: ['干草', 'gān cǎo', 'jerami'],
+  nomilk: ['没有牛奶了', 'méi yǒu niú nǎi le', 'susunya sudah habis'],
+  // Drum
+  drum: ['鼓', 'gǔ', 'drum'],
+  playdrum: ['打鼓', 'dǎ gǔ', 'main drum'],
+  bigdrum: ['大鼓', 'dà gǔ', 'drum besar'],
+  smalldrum: ['小鼓', 'xiǎo gǔ', 'drum kecil'],
+  bell: ['铃铛', 'líng dang', 'lonceng'],
+  followdrum: ['跟我打', 'gēn wǒ dǎ', 'ikuti aku'],
+  hits: ['打几下', 'dǎ jǐ xià', 'pukul berapa kali'],
+  big: ['大', 'dà', 'besar'],
+  small: ['小', 'xiǎo', 'kecil'],
+  // Gunung
+  jump: ['跳', 'tiào', 'lompat'],
+  swim: ['游泳', 'yóu yǒng', 'berenang'],
+  cool: ['好凉快', 'hǎo liáng kuai', 'segar sekali!'],
+  // Stiker, kejutan, Dòudou, bunga matahari, kostum
+  sticker: ['贴纸', 'tiē zhǐ', 'stiker'],
+  stickerbook: ['贴纸本', 'tiē zhǐ běn', 'buku stiker'],
+  surprise: ['惊喜', 'jīng xǐ', 'kejutan'],
+  todaysurprise: ['今天有惊喜！', 'jīn tiān yǒu jīng xǐ', 'Hari ini ada kejutan!'],
+  panda: ['熊猫', 'xióng māo', 'panda'],
+  rainbow: ['彩虹', 'cǎi hóng', 'pelangi'],
+  balloon: ['气球', 'qì qiú', 'balon'],
+  kite: ['风筝', 'fēng zheng', 'layang-layang'],
+  hotairballoon: ['热气球', 'rè qì qiú', 'balon udara'],
+  goldfish: ['金鱼', 'jīn yú', 'ikan mas'],
+  shakehand: ['握手', 'wò shǒu', 'salaman'],
+  rollover: ['打滚', 'dǎ gǔn', 'berguling'],
+  goodboy: ['真乖', 'zhēn guāi', 'pintar sekali'],
+  learned: ['豆豆学会了！', 'dòu dou xué huì le', 'Dòudou sudah bisa!'],
+  sunflower: ['向日葵', 'xiàng rì kuí', 'bunga matahari'],
+  bud: ['花苞', 'huā bāo', 'kuncup bunga'],
+  growtomorrow: ['明天会长大', 'míng tiān huì zhǎng dà', 'besok akan tumbuh'],
+  seeyoutomorrow: ['明天见', 'míng tiān jiàn', 'sampai besok'],
+  bloom: ['开花了', 'kāi huā le', 'bunganya mekar'],
+  costume: ['服装', 'fú zhuāng', 'kostum'],
+  tigersuit: ['老虎装', 'lǎo hǔ zhuāng', 'kostum harimau'],
+  dragonsuit: ['龙装', 'lóng zhuāng', 'kostum naga'],
+  cowboyhat: ['牛仔帽', 'niú zǎi mào', 'topi koboi'],
+  tiger: ['老虎', 'lǎo hǔ', 'harimau'],
+  // Hari raya
+  cny: ['春节', 'chūn jié', 'Imlek'],
+  happynewyear: ['新年快乐', 'xīn nián kuài lè', 'selamat tahun baru'],
+  gongxi: ['恭喜发财', 'gōng xǐ fā cái', 'semoga makmur'],
+  redpacket: ['红包', 'hóng bāo', 'angpao'],
+  liondance: ['舞狮', 'wǔ shī', 'barongsai'],
+  fireworks: ['烟花', 'yān huā', 'kembang api'],
+  lantern: ['灯笼', 'dēng long', 'lampion'],
+  midautumn: ['中秋节', 'zhōng qiū jié', 'Festival Kue Bulan'],
+  happymidautumn: ['中秋节快乐', 'zhōng qiū jié kuài lè', 'selamat Festival Kue Bulan'],
+  mooncake: ['月饼', 'yuè bing', 'kue bulan'],
+  birthday: ['生日', 'shēng rì', 'ulang tahun'],
+  happybirthday: ['生日快乐', 'shēng rì kuài lè', 'selamat ulang tahun'],
+  cake: ['蛋糕', 'dàn gāo', 'kue'],
+  blowcandles: ['吹蜡烛', 'chuī là zhú', 'tiup lilin'],
+  // Keluarga jalan-jalan
+  gege: ['哥哥', 'gē ge', 'kakak laki-laki'],
+  didi: ['弟弟', 'dì di', 'adik laki-laki'],
+  picnic: ['野餐', 'yě cān', 'piknik'],
+  q_climb: ['我们去爬山吧！', 'wǒ men qù pá shān ba', 'Ayo kita mendaki gunung!'],
+  q_swim: ['我们去游泳吧！', 'wǒ men qù yóu yǒng ba', 'Ayo kita berenang!'],
+  q_water: ['要喝水吗？', 'yào hē shuǐ ma', 'Mau minum air?'],
+  q_gege: ['弟弟，我们一起玩！', 'dì di wǒ men yì qǐ wán', 'Adik, ayo main bersama!'],
+  // Robot & kopi, irama drum
+  robot: ['机器人', 'jī qì rén', 'robot'],
+  coffee: ['咖啡', 'kā fēi', 'kopi'],
+  coffeemachine: ['咖啡机', 'kā fēi jī', 'mesin kopi'],
+  makecoffee: ['我来做咖啡！', 'wǒ lái zuò kā fēi', 'Aku buatkan kopi!'],
+  pleasedrink: ['请喝咖啡！', 'qǐng hē kā fēi', 'Silakan minum kopi!'],
+  rhythm: ['节奏', 'jié zòu', 'irama'],
+  followrhythm: ['跟节奏', 'gēn jié zòu', 'ikuti irama'],
+  perfect: ['太棒了', 'tài bàng le', 'sempurna!'],
+  good: ['好', 'hǎo', 'bagus'],
+  again: ['再来', 'zài lái', 'coba lagi'],
+  start: ['开始', 'kāi shǐ', 'mulai'],
+  // Foto & cerita
+  photo: ['照片', 'zhào piàn', 'foto'],
+  camera: ['相机', 'xiàng jī', 'kamera'],
+  cheese: ['茄子', 'qié zi', '"cheese!" (diucapkan saat difoto)'],
+  story: ['故事', 'gù shi', 'cerita'],
+  steamtrain: ['蒸汽火车', 'zhēng qì huǒ chē', 'kereta uap'],
+  bullettrain: ['高铁', 'gāo tiě', 'kereta cepat'],
+  freighttrain: ['货运火车', 'huò yùn huǒ chē', 'kereta barang'],
+  countagain: ['再数一数', 'zài shǔ yi shǔ', 'hitung lagi'],
+  // Mini game bunga
+  right: ['对了', 'duì le', 'benar!'],
+  tryagain: ['再找找', 'zài zhǎo zhao', 'cari lagi'],
+  pretty: ['好漂亮', 'hǎo piào liang', 'cantik sekali'],
+  // Kalimat tanya & jawab
+  q_eat: ['你想吃什么？', 'nǐ xiǎng chī shén me', 'Kamu mau makan apa?'],
+  a_eat: ['我想吃饺子！', 'wǒ xiǎng chī jiǎo zi', 'Aku mau makan pangsit!'],
+  q_hungry: ['你饿不饿？', 'nǐ è bu è', 'Kamu lapar tidak?'],
+  a_hungry: ['我饿了！', 'wǒ è le', 'Aku lapar!'],
+  q_name: ['你叫什么名字？', 'nǐ jiào shén me míng zi', 'Siapa namamu?'],
+  a_name: ['我叫' + CHILD + '！', 'wǒ jiào ' + CHILD, 'Namaku ' + CHILD + '!'],
+  q_happy: ['你今天开心吗？', 'nǐ jīn tiān kāi xīn ma', 'Hari ini kamu senang?'],
+  a_happy: ['很开心！', 'hěn kāi xīn', 'Senang sekali!'],
+  q_howru: ['你好吗？', 'nǐ hǎo ma', 'Apa kabar?'],
+  a_howru: ['我很好！', 'wǒ hěn hǎo', 'Aku baik!'],
+  q_color: ['你喜欢什么颜色？', 'nǐ xǐ huan shén me yán sè', 'Kamu suka warna apa?'],
+  q_play: ['我们一起玩，好吗？', 'wǒ men yì qǐ wán hǎo ma', 'Kita main bersama, mau?'],
+  a_ok: ['好！', 'hǎo', 'Mau!'],
+  q_ball: ['你要玩球吗？', 'nǐ yào wán qiú ma', 'Kamu mau main bola?'],
+  a_yes: ['要！', 'yào', 'Mau!'],
+  q_where: ['你去哪里？', 'nǐ qù nǎ lǐ', 'Kamu mau ke mana?'],
+  a_where: ['我去玩！', 'wǒ qù wán', 'Aku mau main!'],
+  q_visit: ['你来看爸爸吗？', 'nǐ lái kàn bà ba ma', 'Kamu datang menengok Ayah?'],
+  a_visit: ['是的！', 'shì de', 'Iya!'],
+  q_bunny: ['你看见小兔子了吗？', 'nǐ kàn jiàn xiǎo tù zi le ma', 'Kamu lihat kelinci kecil?'],
+  a_bunny: ['看见了！', 'kàn jiàn le', 'Lihat!'],
+  q_tired: ['你累不累？', 'nǐ lèi bu lèi', 'Kamu capek tidak?'],
+  a_tired: ['不累！', 'bú lèi', 'Tidak capek!'],
+  q_dog: ['这是你的小狗吗？', 'zhè shì nǐ de xiǎo gǒu ma', 'Ini anak anjingmu?'],
+  a_dog: ['是的！它叫豆豆。', 'shì de tā jiào dòu dou', 'Iya! Namanya Dòudou.'],
+  q_slide: ['你想玩滑梯吗？', 'nǐ xiǎng wán huá tī ma', 'Kamu mau main perosotan?'],
+  q_rope: ['你会跳绳吗？', 'nǐ huì tiào shéng ma', 'Kamu bisa lompat tali?'],
+  a_try: ['我试试！', 'wǒ shì shi', 'Aku coba!'],
+  q_apple: ['你喜欢吃苹果吗？', 'nǐ xǐ huan chī píng guǒ ma', 'Kamu suka makan apel?'],
+  a_like: ['喜欢！', 'xǐ huan', 'Suka!'],
+  q_count: ['这里有几个？', 'zhè lǐ yǒu jǐ gè', 'Ada berapa di sini?'],
+};
+
+// Bahasa yang dipelajari: 'zh' = Mandarin, 'en' = English, 'ja' = Jepang (dipilih di menu orang tua; isinya di lang.js).
+// Kolom "zh" pada kartu berarti "teks yang dipelajari"; "py" = pinyin (Mandarin) atau romaji (Jepang).
+let LANG = 'zh';
+try { const l = (JSON.parse(localStorage.getItem('anan-village-v1') || 'null') || {}).lang; if (l === 'en' || l === 'ja') LANG = l; } catch (e) {}
+
+function word(key) {
+  const w = WORDS[key];
+  if (!w) return null;
+  if (LANG === 'en') return { key, zh: WORDS_EN[key] || w[0], py: '', id: w[2] };
+  if (LANG === 'ja') { const j = WORDS_JA[key] || [w[0], '']; return { key, zh: j[0], py: j[1], id: w[2] }; }
+  return { key, zh: w[0], py: w[1], id: w[2] };
+}
+
+const THEMES = [
+  { name: 'Hewan peliharaan', where: 'Dòudou si anjing menemani Russel di halaman (Pertanian). Kucing tidur di depan rumah.', words: ['dog', 'doudou', 'woof', 'cat', 'meow'] },
+  { name: 'Teman sekolah', where: 'Di Sekolah: ' + NAMES.meimei + ' main ayunan, ' + NAMES.lele + ' main bola, ' + NAMES.tiantian + ' main perosotan, ' + NAMES.xiaoyu + ' lompat tali. Bu ' + NAMES.teacher + ' di dekat papan tulis.', words: ['school', 'teacher', 'friend', 'meimei', 'lele', 'tiantian', 'xiaoyu', 'playtogether', 'ball', 'swing', 'slide', 'jumprope', 'board'] },
+  { name: 'Makanan', where: 'Meja makan di dalam rumah. Ketuk makanan, Russel akan memakannya.', words: ['rice', 'noodles', 'dumpling', 'bun', 'egg', 'milk', 'fish', 'water', 'yummy'] },
+  { name: 'Bunga & bagiannya', where: 'Kebun bunga di Pertanian. Ketuk bunga, lalu pilih: lihat, tanam (bunga tumbuh bagian demi bagian), atau cari (tebak bagian bunga).', words: ['flower', 'petal', 'pistil', 'leaf', 'stem', 'root', 'seed', 'butterfly', 'right', 'tryagain', 'pretty'] },
+  { name: 'Hewan ternak', where: 'Kandang di Pertanian (ayam, sapi, domba). Bebek berenang di sungai Desa.', words: ['chicken', 'cluck', 'cow', 'moo', 'sheep', 'baa', 'duck', 'quack'] },
+  { name: 'Kebun buah & sayur', where: 'Petak tanah di Pertanian: tanam, siram, tunggu, panen. Goyang pohon apel.', words: ['seed', 'watering', 'sprout', 'carrot', 'tomato', 'watermelon', 'corn', 'apple', 'appletree'] },
+  { name: 'Cuaca', where: 'Tombol awan di kiri atas. Jendela rumah juga memperlihatkan cuaca.', words: ['sunny', 'sun', 'cloudy', 'rain', 'windy', 'snow'] },
+  { name: 'Pagi & malam', where: 'Tombol matahari/bulan di kiri atas, atau tidurkan Russel di tempat tidur.', words: ['morning', 'night', 'moon', 'star', 'goodmorning', 'goodevening', 'goodnight'] },
+  { name: 'Warna', where: 'Ganti warna bunga di kebun bunga, dan warna baju di cermin.', words: ['red', 'yellow', 'blue', 'green', 'pink', 'purple', 'orange', 'white'] },
+  { name: 'Angka 1–10', where: 'Papan tulis di ruang kelas: hitung satu per satu, atau main tebak jumlah (pilih angka yang benar, kumpulkan 5 bintang). Telur dan apel di Pertanian juga dihitung.', words: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9', 'n10', 'count', 'howmany', 'countagain', 'great'] },
+  { name: 'Kendaraan', where: 'Jalan di Desa: mobil, bus, sepeda, kereta di sebelah jalan, perahu naga di sungai, pesawat.', words: ['car', 'bus', 'bike', 'train', 'steamtrain', 'bullettrain', 'freighttrain', 'boat', 'dragonboat', 'dragon', 'plane'] },
+  { name: 'Kejutan harian', where: 'Setiap hari ada satu kejutan di tempat berbeda (tanda bintang di peta).', words: ['surprise', 'todaysurprise', 'panda', 'rainbow', 'balloon', 'kite', 'hotairballoon', 'goldfish'] },
+  { name: 'Dòudou & bunga matahari', where: 'Dòudou belajar trik makin sering diajak main. Bunga matahari di Pertanian tumbuh satu tahap tiap hari setelah disiram.', words: ['sitdown', 'shakehand', 'rollover', 'goodboy', 'learned', 'sunflower', 'bud', 'bloom', 'growtomorrow', 'seeyoutomorrow'] },
+  { name: 'Kostum, foto & cerita', where: 'Kostum terbuka dari jumlah stiker (cermin → 衣服). Tombol kamera mengambil foto; buku stiker menyimpan stiker dan foto; tombol buku membuka cerita.', words: ['costume', 'tigersuit', 'dragonsuit', 'cowboyhat', 'tiger', 'sticker', 'stickerbook', 'photo', 'camera', 'cheese', 'story'] },
+  { name: 'Hari raya', where: 'Otomatis saat Imlek, Festival Kue Bulan, dan ulang tahun Russel (atur tanggalnya di bawah).', words: ['cny', 'happynewyear', 'gongxi', 'redpacket', 'liondance', 'fireworks', 'lantern', 'midautumn', 'happymidautumn', 'mooncake', 'birthday', 'happybirthday', 'cake', 'blowcandles'] },
+  { name: 'Rumah hewan', where: 'Ketuk pintu kandang di Pertanian. Perah susu sapi, cukur bulu domba, ambil telur; hasilnya masuk tas.', words: ['barn', 'cow', 'milkcow', 'milk', 'nomilk', 'sheep', 'shear', 'wool', 'chicken', 'egg', 'hay'] },
+  { name: 'Drum', where: 'Drum di ruang kelas: main bebas (打一打), tiru irama (跟我打), atau pukul sesuai jumlah (打几下), belajar 大 dan 小.', words: ['drum', 'playdrum', 'bigdrum', 'smalldrum', 'bell', 'followdrum', 'hits', 'big', 'small', 'rhythm', 'followrhythm', 'perfect', 'good', 'again', 'start'] },
+  { name: 'Lompat & berendam', where: 'Di Pegunungan: ketuk kolam atau air terjun untuk melompat dan berendam; ketuk batu untuk melompat.', words: ['jump', 'swim', 'cool', 'waterfall', 'rock'] },
+  { name: 'Musik piano', where: 'Piano di ruang kelas: main bebas (弹一弹), tiru nada (跟我弹), atau lagu Dua Harimau (唱歌).', words: ['piano', 'playpiano', 'follow', 'sing', 'listenagain', 'yourturn', 'classmate'] },
+  { name: 'Ruang kelas', where: 'Masuk lewat pintu gedung Sekolah. Bu ' + NAMES.teacher + ' ada di depan papan tulis (permainan berhitung). Ketuk kursi untuk duduk, piano untuk bermain musik.', words: ['classroom', 'desk', 'chair', 'sitdown', 'board', 'pencil', 'crayon', 'piano', 'window', 'q_study'] },
+  { name: 'Bermain & pintu', where: 'Pintu kandang di Pertanian bisa dibuka (Russel bisa masuk). Di Sekolah Russel bisa naik ayunan dan perosotan.', words: ['gate', 'opengate', 'closegate', 'fun', 'swing', 'slide'] },
+  { name: 'Keluarga', where: 'Di dalam rumah: Ibu ' + NAMES.mom + ', Kakek, Nenek. Siang hari Ayah ' + NAMES.dad + ' bekerja di kantor, malam hari di rumah. Di Pegunungan dan Pantai, Ayah, Ibu, dan kakak ikut jalan-jalan.', words: ['dad', 'mom', 'grandpa', 'grandma', 'gege', 'didi', 'me', 'home', 'picnic', 'q_climb', 'q_swim', 'q_water', 'q_gege'] },
+  { name: 'Kantor Ayah', where: 'Jalan ke kanan dari Sekolah. Ketuk robot: ia membuat kopi lalu mengantarkannya ke Ayah.', words: ['office', 'computer', 'laptop', 'phone', 'hellophone', 'book', 'clock', 'aquarium', 'fish', 'auntie', 'water', 'robot', 'coffee', 'coffeemachine', 'makecoffee', 'pleasedrink'] },
+  { name: 'Pantai', where: 'Lewat peta, atau panah ke bawah di tepi sungai Desa. Kerang dan bintang laut bisa diambil.', words: ['beach', 'sea', 'wave', 'sand', 'shell', 'starfish', 'crab', 'seagull', 'sandcastle', 'palm', 'parasol'] },
+  { name: 'Tas', where: 'Ketuk barang di tanah (apel, telur, sayur, kerang, jamur, bunga liar) untuk disimpan. Buka tas: makan, beri ke orang atau hewan, atau lempar.', words: ['bag', 'take', 'give', 'giveyou', 'towhom', 'throw', 'eat', 'bagfull', 'cannoteat', 'wildflower'] },
+  { name: 'Pegunungan', where: 'Lewat peta, atau jalan ke kiri dari Pertanian.', words: ['mountain', 'waterfall', 'river', 'rock', 'tree', 'rabbit', 'squirrel', 'bird', 'mushroom', 'cloud', 'uncle'] },
+  { name: 'Kalimat tanya & jawab', where: 'Keluarga, guru, teman, dan orang yang lewat bertanya; ketuk mereka lagi untuk pertanyaan berikutnya.', words: ['q_name', 'a_name', 'q_eat', 'a_eat', 'q_hungry', 'a_hungry', 'q_happy', 'a_happy', 'q_howru', 'a_howru', 'q_color', 'q_play', 'a_ok', 'q_ball', 'a_yes', 'q_slide', 'q_rope', 'a_try', 'q_where', 'a_where', 'q_visit', 'a_visit', 'q_dog', 'a_dog', 'q_apple', 'a_like', 'q_bunny', 'a_bunny', 'q_tired', 'a_tired', 'q_son', 'a_son', 'q_sea', 'q_count'] },
+  { name: 'Bagian tubuh', where: 'Cermin di dalam rumah, tab pertama.', words: ['head', 'hair', 'eyes', 'ears', 'nose', 'mouth', 'hand', 'tummy', 'foot'] },
+  { name: 'Perasaan', where: 'Cermin di dalam rumah, tab wajah. Lèle juga bisa sedih di sekolah.', words: ['happy', 'sad', 'angry', 'scared', 'sleepy'] },
+  { name: 'Pakaian', where: 'Lemari atau cermin. Saat hujan Russel memakai payung, saat salju memakai syal.', words: ['hat', 'shirt', 'pants', 'shoes', 'scarf', 'umbrella'] },
+  { name: 'Rutinitas harian', where: 'Tempat tidur, wastafel, gelas sikat gigi, dan meja makan di rumah.', words: ['wakeup', 'brush', 'wash', 'eat', 'sleep'] },
+  { name: 'Sapaan & sopan santun', where: 'Sapa keluarga, guru, teman. Makan → terima kasih. Bola mengenai Lèle → maaf.', words: ['hello', 'helloteacher', 'thanks', 'welcome', 'bye', 'sorry', 'itsok'] },
+  { name: 'Tempat', where: 'Ketuk nama tempat di atas layar, atau buka peta.', words: ['home', 'farm', 'barn', 'village', 'school', 'classroom', 'office', 'mountain', 'beach', 'map'] },
+];
+
+// Warna bunga: [kunci kata, warna utama, bayangan]
+const FLOWER_COLORS = [
+  ['red', '#e2483d', '#a92f2a'],
+  ['yellow', '#f4cf3a', '#c99a1c'],
+  ['blue', '#4f86e0', '#2f5bab'],
+  ['pink', '#f39ac0', '#cc6a95'],
+  ['purple', '#9b6bd6', '#6c45a3'],
+  ['orange', '#f08a32', '#bd5e1c'],
+  ['white', '#fbf7ee', '#cfc7b6'],
+];
+
+// Warna baju di cermin
+const SHIRT_COLORS = [
+  ['red', '#d9483b', '#a8352b'],
+  ['yellow', '#f0c43a', '#c2951f'],
+  ['blue', '#4a7fd6', '#3259a3'],
+  ['green', '#58a84a', '#3d7f33'],
+  ['purple', '#8f62c9', '#68449c'],
+  ['orange', '#ee8a3a', '#bb6120'],
+];
+
+const NUM_ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+const NUM_PY = ['', 'yī', 'èr', 'sān', 'sì', 'wǔ', 'liù', 'qī', 'bā', 'jiǔ', 'shí'];
+const NUM_ID = ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh'];
+
+// Frasa hitungan dengan kata bantu bilangan, mis. 两只鸭子
+function countWord(n, nounKey, measure, measurePy) {
+  const noun = word(nounKey);
+  if (LANG === 'en') return { key: null, zh: NUM_EN[n] + ' ' + (n === 1 ? noun.zh : PLURAL_EN[nounKey] || noun.zh + 's'), py: '', id: NUM_ID[n] + ' ' + noun.id };
+  if (LANG === 'ja') return { key: null, zh: noun.zh + 'が ' + COUNT_JA[n][0], py: noun.py + ' ga ' + COUNT_JA[n][1], id: NUM_ID[n] + ' ' + noun.id };
+  const nz = n === 2 ? '两' : NUM_ZH[n];
+  const np = n === 2 ? 'liǎng' : NUM_PY[n];
+  return { key: null, zh: nz + measure + noun.zh, py: np + ' ' + measurePy + ' ' + noun.py, id: NUM_ID[n] + ' ' + noun.id };
+}
+
+// Nada pinyin: 1–4, 5 = netral
+function toneOf(syl) {
+  if (/[āēīōūǖ]/.test(syl)) return 1;
+  if (/[áéíóúǘ]/.test(syl)) return 2;
+  if (/[ǎěǐǒǔǚ]/.test(syl)) return 3;
+  if (/[àèìòùǜ]/.test(syl)) return 4;
+  return 5;
+}

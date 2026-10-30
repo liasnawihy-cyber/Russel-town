@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="id">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#1d2619">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Desa Russel">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Desa Kecil Russel</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:"ZCOOL KuaiLe";font-weight:400;font-display:swap;src:url(fonts/zcool-0-9dca5c7a.woff2) format("woff2");unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+3001,U+3002,U+300C,U+300D,U+3400,U+4E00,U+4E03,U+4E09,U+4E0A,U+4E0B,U+4E0D,U+4E24,U+4E2A,U+4E2D,U+4E48,U+4E50,U+4E56,U+4E5D,U+4E66,U+4E86,U+4E8B,U+4E8C,U+4E91,U+4E94,U+4EAE,U+4EBA,U+4EC0,U+4ECA,U+4ED4,U+4EEC,U+4F1A,U+4F1E,U+4F53,U+4F60,U+505A,U+505C,U+513F,U+5154,U+516B,U+516C,U+516D,U+5171,U+5173,U+518D,U+519C,U+51C9,U+51E0,U+522E,U+5230,U+5237,U+526A,U+529E,U+52A8,U+5305,U+5341,U+5343,U+535C,U+53BB,U+53CB,U+53D1,U+53D4,U+53EA,U+53EB,U+53F6,U+5403,U+540C,U+540D,U+5411,U+5417,U+5427,U+542C,U+5439,U+5496,U+54A9,U+54AF,U+54CE,U+54D2,U+54DE,U+54DF,U+54E5,U+54EA,U+5531,U+5561,U+5582,U+559C,U+559D,U+55B5,U+560E,U+5634,U+5668,U+56DB,U+56DE,U+56F0,U+56F4,U+56FE,U+5728,U+5730,U+573A,U+5750,U+5821,U+58F3,U+591A,U+5927,U+5929,U+592A,U+5934,U+5947,U+594F,U+5976,U+597D,U+5988,U+59CB,U+59E8,U+5B50,U+5B57,U+5B66,U+5B83,U+5B89,U+5BA2,U+5BA4,U+5BB3,U+5BB6,U+5BF9,U+5C0F,U+5C3E,U+5C71,U+5DF4,U+5DFE,U+5E03,U+5E08,U+5E3D,U+5E72,U+5E74,U+5E8A,U+5F00,U+5F1F,U+5F39,U+5F69,U+5F88,U+5F97,U+5FC3,U+5FEB,U+6015,U+602A,U+606D,U+60C5,U+60CA,U+60F3,U+6211,U+6237,U+624B,U+6253,U+6254,U+627E,U+62FF,U+6324,U+63E1,U+6458,U+6545,U+6559,U+6570,U+6587,U+65B0,U+65E5,U+65E9,U+660E,U+661F,U+6625,U+662F,U+665A,U+6674,U+6708,U+6709,U+670B,U+670D,U+672C,U+6735,U+673A,U+6751,U+6761,U+6765,U+677E,U+677F,U+679C,U+67FF,U+6811,U+6821,U+6839,U+684C,U+68AF,U+68D2,U+6905,U+6930,U+6A59,U+6B21,U+6B22,U+6B4C,U+6BDB,U+6C14,U+6C34,U+6C6A,U+6C7D,U+6C99,U+6CA1,U+6CB3}
+@font-face{font-family:"ZCOOL KuaiLe";font-weight:400;font-display:swap;src:url(fonts/zcool-1-16892777.woff2) format("woff2");unicode-range:U+6CF3,U+6D17,U+6D47,U+6D6A,U+6D77,U+6E38,U+6ED1,U+6EDA,U+6EE1,U+6F02,U+7011,U+706B,U+706F,U+70DB,U+70DF,U+70ED,U+7167,U+718A,U+722C,U+7237,U+7238,U+7247,U+7259,U+725B,U+7269,U+72D7,U+72EE,U+732B,U+7389,U+73A9,U+7403,U+7434,U+74DC,U+74E3,U+751F,U+7535,U+767D,U+7684,U+76F8,U+770B,U+771F,U+773C,U+775B,U+7761,U+77F3,U+79CB,U+79CD,U+7A7A,U+7A97,U+7B14,U+7B3C,U+7B5D,U+7B80,U+7C73,U+7C89,U+7CD5,U+7CFB,U+7D2B,U+7D2F,U+7EA2,U+7EB8,U+7ED9,U+7EF3,U+7EFF,U+7F38,U+7F8A,U+8001,U+8033,U+809A,U+80E1,U+80FD,U+8111,U+811A,U+81EA,U+821E,U+821F,U+8239,U+8272,U+8282,U+82B1,U+82BD,U+82DE,U+82F9,U+8304,U+830E,U+8349,U+83C7,U+841D,U+8475,U+84B8,U+84DD,U+8611,U+864E,U+8679,U+86CB,U+8721,U+8774,U+8776,U+8783,U+87F9,U+884C,U+8863,U+88C5,U+88E4,U+897F,U+8981,U+89C1,U+89C9,U+8A9E,U+8BB0,U+8BD5,U+8BDD,U+8BE5,U+8BF7,U+8C01,U+8C22,U+8C31,U+8C46,U+8D1D,U+8D22,U+8D27,U+8D34,U+8D77,U+8DD1,U+8DDF,U+8DF3,U+8EAB,U+8F66,U+8F86,U+8FB9,U+8FC7,U+8FD0,U+8FD4,U+8FD9,U+906E,U+90FD,U+91CC,U+91CE,U+91D1,U+949F,U+94A2,U+94C1,U+94C3,U+94C5,U+94DB,U+957F,U+95E8,U+9633,U+963F,U+96BE,U+96E8,U+96EA,U+9762,U+978B,U+9897,U+989C,U+98CE,U+98DE,U+9910,U+996D,U+997A,U+997C,U+997F,U+9AD8,U+9C7C,U+9E1F,U+9E21,U+9E25,U+9E2D,U+9EC4,U+9ED1,U+9F13,U+9F20,U+9F3B,U+9F99,U+9FFF,U+FF01,U+FF0C,U+FF1F}
+@font-face{font-family:"Kosugi Maru";font-weight:400;font-display:swap;src:url(fonts/kosugi-5a220e17.woff2) format("woff2");unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+3001,U+3002,U+300C,U+300D,U+3042,U+3044,U+3046,U+3048,U+304A,U+304B,U+304C,U+304D,U+304E,U+304F,U+3050,U+3051,U+3052,U+3053,U+3054,U+3055,U+3056,U+3057,U+3058,U+3059,U+305A,U+305B,U+305C,U+305D,U+305E,U+305F,U+3060,U+3061,U+3063,U+3064,U+3066,U+3067,U+3068,U+3069,U+306A,U+306B,U+306C,U+306D,U+306E,U+306F,U+3070,U+3071,U+3072,U+3073,U+3074,U+3075,U+3076,U+3079,U+307A,U+307B,U+307C,U+307D,U+307E,U+307F,U+3080,U+3081,U+3082,U+3083,U+3084,U+3085,U+3086,U+3087,U+3088,U+3089,U+308A,U+308B,U+308C,U+308D,U+308F,U+3092,U+3093,U+30A2,U+30A4,U+30A6,U+30A8,U+30AA,U+30AB,U+30AC,U+30AD,U+30AF,U+30B1,U+30B3,U+30B5,U+30B7,U+30B8,U+30B9,U+30BA,U+30BB,U+30BD,U+30BF,U+30C0,U+30C1,U+30C3,U+30C8,U+30C9,U+30CA,U+30CB,U+30CE,U+30D0,U+30D1,U+30D2,U+30D4,U+30D5,U+30D6,U+30D7,U+30D8,U+30D9,U+30DC,U+30DE,U+30E0,U+30E1,U+30E2,U+30E3,U+30E4,U+30E5,U+30E8,U+30E9,U+30EA,U+30EB,U+30EC,U+30ED,U+30EF,U+30F3,U+30F4,U+30FC,U+FF01,U+FF0C,U+FF1F}
+@font-face{font-family:"Andika";font-weight:400;font-display:swap;src:url(fonts/andika-614248ee.woff2) format("woff2");unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+BE,U+D2,U+D7,U+E0,U+E1,U+E8,U+E9,U+EC,U+ED,U+F2,U+F3,U+F9,U+FA,U+100,U+101,U+113,U+11B,U+12B,U+14D,U+16B,U+1CE,U+1D0,U+1D2,U+1D4,U+1D6,U+1D8,U+1DA,U+1DC,U+2013,U+2014}
+@font-face{font-family:"Andika";font-weight:700;font-display:swap;src:url(fonts/andika-bold-614248ee.woff2) format("woff2");unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+BE,U+D2,U+D7,U+E0,U+E1,U+E8,U+E9,U+EC,U+ED,U+F2,U+F3,U+F9,U+FA,U+100,U+101,U+113,U+11B,U+12B,U+14D,U+16B,U+1CE,U+1D0,U+1D2,U+1D4,U+1D6,U+1D8,U+1DA,U+1DC,U+2013,U+2014}
+html{touch-action:manipulation;overscroll-behavior:none}
+img,canvas,button{-webkit-touch-callout:none}
+</style>
+<style>
+/* Layout: satu layar 16:9 berisi dunia piksel; menu berbingkai kayu & kertas seperti papan desa. */
+:root {
+  --bg: #1d2619; --bg2: #26331f;
+  --wood: #8a5530; --wood-d: #4e2e18; --wood-l: #c08a52;
+  --parch: #fbf0d4; --parch-d: #eedcb0; --ink: #3a2616; --ink-soft: #6d5238;
+  --leaf: #4f9a3c; --leaf-d: #2f6e26; --berry: #d2463a; --sun: #ffd84a;
+  --t1: #d3352b; --t2: #2e8a3b; --t3: #2c5fc4; --t4: #8b3fb8; --t5: #8d7c6a;
+  --zh: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --lat: "Andika", "Segoe UI", system-ui, sans-serif;
+  --parch-glass: rgba(251,240,212,0.78); --sheet-glass: rgba(251,240,212,0.86);
+  --wood-glass-l: rgba(192,138,82,0.72); --wood-glass: rgba(138,85,48,0.72);
+  --u: 6px;
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--lat); overflow: hidden; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+
+#stage {
+  position: fixed; inset: 0; box-sizing: border-box; display: grid; place-items: center;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: radial-gradient(ellipse at 50% 40%, var(--bg2), var(--bg) 70%);
+}
+#box { position: relative; width: 320px; height: 180px; border-radius: calc(var(--u) * 0.8); overflow: hidden; box-shadow: 0 0 0 calc(var(--u) * 0.5) var(--wood-d), 0 calc(var(--u) * 1.5) calc(var(--u) * 4) rgba(0,0,0,0.5); }
+#game { display: block; width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; touch-action: none; }
+canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* Tombol papan kayu */
+.wood { background: linear-gradient(var(--wood-l), var(--wood)); border: calc(var(--u) * 0.4) solid var(--wood-d); box-shadow: inset 0 calc(var(--u) * 0.3) 0 rgba(255,230,180,0.35), 0 calc(var(--u) * 0.35) 0 rgba(0,0,0,0.35); }
+.hud { position: absolute; top: calc(var(--u) * 1.4); left: calc(var(--u) * 1.4); display: flex; gap: calc(var(--u) * 1); }
+.hbtn { width: calc(var(--u) * 6.6); height: calc(var(--u) * 6.6); border-radius: calc(var(--u) * 1.4); display: grid; place-items: center; padding: 0; }
+.hbtn canvas { width: 72%; height: 72%; }
+.hbtn:active { transform: translateY(calc(var(--u) * 0.3)); }
+
+#place { align-self: center; margin-left: calc(var(--u) * 0.6); padding: calc(var(--u) * 0.2) calc(var(--u) * 1.6) calc(var(--u) * 0.5); border-radius: calc(var(--u) * 1.2); color: var(--parch); font-family: var(--zh); font-size: calc(var(--u) * 2.6); line-height: 1.1; }
+#place rt { color: #fff3cf; }
+
+#btn-parent { position: absolute; top: calc(var(--u) * 1.4); right: calc(var(--u) * 1.4); border-radius: calc(var(--u) * 1.2); padding: calc(var(--u) * 0.5) calc(var(--u) * 1.2); color: var(--parch); font-size: calc(var(--u) * 1.35); line-height: 1.15; text-align: center; overflow: hidden; }
+#btn-parent small { display: block; opacity: 0.8; font-size: 0.85em; }
+#btn-parent::after { content: ""; position: absolute; left: 0; bottom: 0; height: calc(var(--u) * 0.5); width: 0; background: var(--sun); }
+#btn-parent.holding::after { width: 100%; transition: width 1s linear; }
+
+/* Pinyin di atas hanzi, warna = nada */
+ruby { ruby-position: over; ruby-align: center; }
+rt { font-family: var(--lat); font-size: 0.4em; font-weight: 700; letter-spacing: 0.01em; }
+.t1 { color: var(--t1); } .t2 { color: var(--t2); } .t3 { color: var(--t3); } .t4 { color: var(--t4); } .t5 { color: var(--t5); }
+
+/* Kartu kata */
+#card { position: absolute; left: 50%; bottom: calc(var(--u) * 1.6); transform: translateX(-50%); display: flex; align-items: center; gap: calc(var(--u) * 1.6); padding: calc(var(--u) * 0.8) calc(var(--u) * 1.2) calc(var(--u) * 0.8) calc(var(--u) * 2.4); background: var(--parch-glass); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border: calc(var(--u) * 0.5) solid var(--wood); border-radius: calc(var(--u) * 1.6); box-shadow: 0 0 0 calc(var(--u) * 0.25) var(--wood-d), 0 calc(var(--u) * 0.6) 0 rgba(0,0,0,0.3); max-width: 80%; pointer-events: auto; }
+#card.pop { animation: pop 0.32s cubic-bezier(.3,1.6,.5,1); }
+@keyframes pop { from { transform: translateX(-50%) scale(0.8); opacity: 0.4; } to { transform: translateX(-50%) scale(1); opacity: 1; } }
+.card-text { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+#card-zh { font-family: var(--zh); font-size: calc(var(--u) * 5.4); line-height: 1.25; color: var(--ink); white-space: nowrap; }
+#card-zh .plain { display: block; } #card-zh .plainpy { display: block; font-family: var(--lat); font-size: 0.38em; color: var(--ink-soft); text-align: center; }
+#card-id { font-size: calc(var(--u) * 1.7); color: var(--ink-soft); line-height: 1.1; }
+/* Mode English: huruf Andika (dibuat untuk anak yang mulai membaca), kalimat panjang boleh turun baris */
+:root.lang-en { --zh: "Andika", "Segoe UI", system-ui, sans-serif; }
+:root.lang-en #card-zh, :root.lang-en .bubble, :root.lang-en #place, :root.lang-en .en, :root.lang-en .tile-zh, :root.lang-en .num, :root.lang-en .lyric, :root.lang-en #story-zh, :root.lang-en .story-title, :root.lang-en .video-title, :root.lang-en .map-label, :root.lang-en .badge { font-weight: 700; }
+:root.lang-en #card-zh { white-space: normal; text-align: center; text-wrap: balance; }
+:root.lang-en #card-zh.xlong { font-size: calc(var(--u) * 3.1); }
+:root.lang-en .tabs button, :root.lang-en .act { font-size: calc(var(--u) * 2.4); }
+:root.lang-en .num { font-size: calc(var(--u) * 2); }
+:root.lang-en .num.big { font-size: calc(var(--u) * 3.4); }
+:root.lang-en .tile-zh { font-size: calc(var(--u) * 2.2); }
+:root.lang-en .lyric { font-size: calc(var(--u) * 4); }
+/* Mode Jepang: huruf bulat Kosugi Maru, romaji kecil di atas (tombol) atau di bawah (kartu) */
+:root.lang-ja { --zh: "Kosugi Maru", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif; }
+:root.lang-ja #card-zh { white-space: normal; text-align: center; }
+:root.lang-ja #card-zh.xlong { font-size: calc(var(--u) * 3.1); }
+:root.lang-ja .tabs button, :root.lang-ja .act { font-size: calc(var(--u) * 2.6); }
+:root.lang-ja .num { font-size: calc(var(--u) * 2.4); }
+:root.lang-ja .num.big { font-size: calc(var(--u) * 3.6); }
+:root.lang-ja .tile-zh { font-size: calc(var(--u) * 2.3); }
+ruby.ja rt { font-family: var(--lat); font-weight: 700; letter-spacing: 0; }
+.lyric span.done { color: var(--leaf-d); }
+.lyric span.now { color: var(--berry); text-decoration: underline; text-decoration-thickness: calc(var(--u) * 0.4); }
+#card-say { width: calc(var(--u) * 6); height: calc(var(--u) * 6); border-radius: 50%; border: calc(var(--u) * 0.4) solid var(--leaf-d); background: var(--leaf); display: grid; place-items: center; padding: 0; flex: none; }
+#card-say svg { width: 58%; height: 58%; }
+
+/* Gelembung bicara */
+#bubbles { position: absolute; inset: 0; pointer-events: none; }
+.bubble { position: absolute; transform: translate(-50%, -100%); background: #fffdf6; color: var(--ink); border: calc(var(--u) * 0.3) solid var(--ink); border-radius: calc(var(--u) * 1.2); padding: calc(var(--u) * 0.2) calc(var(--u) * 1); font-family: var(--zh); font-size: calc(var(--u) * 2.3); white-space: nowrap; animation: bub 0.25s ease-out; }
+.bubble::after { content: ""; position: absolute; left: 50%; bottom: calc(var(--u) * -1.1); transform: translateX(-50%); border: calc(var(--u) * 0.7) solid transparent; border-top-color: var(--ink); }
+@keyframes bub { from { opacity: 0; margin-top: calc(var(--u) * 1); } to { opacity: 1; margin-top: 0; } }
+
+/* Jendela belajar */
+.panel { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; background: rgba(24,16,8,0.28); }
+.sheet { position: relative; width: 90%; max-height: 92%; overflow: auto; background: var(--sheet-glass); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); border: calc(var(--u) * 0.7) solid var(--wood); border-radius: calc(var(--u) * 2); box-shadow: 0 0 0 calc(var(--u) * 0.35) var(--wood-d), 0 calc(var(--u) * 1) calc(var(--u) * 3) rgba(0,0,0,0.45); padding: calc(var(--u) * 2.2); }
+.close { position: absolute; top: calc(var(--u) * 1); right: calc(var(--u) * 1); width: calc(var(--u) * 6); height: calc(var(--u) * 6); border-radius: 50%; background: var(--berry); border: calc(var(--u) * 0.4) solid #8e2a22; display: grid; place-items: center; padding: 0; z-index: 2; }
+.close svg { width: 50%; height: 50%; }
+.two { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: calc(var(--u) * 2.4); align-items: center; }
+.side { display: flex; flex-direction: column; gap: calc(var(--u) * 1.6); min-width: 0; padding-right: calc(var(--u) * 5); }
+.bigword { align-self: flex-start; background: none; border: 0; padding: 0; font-family: var(--zh); font-size: calc(var(--u) * 6); line-height: 1.2; color: var(--ink); }
+#flower-cv { height: calc(var(--u) * 42); width: calc(var(--u) * 36); border-radius: calc(var(--u) * 1.2); border: calc(var(--u) * 0.5) solid var(--wood-d); background: #dff1fb; touch-action: none; }
+.swatches { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 1.1); }
+.swatch { width: calc(var(--u) * 5.4); height: calc(var(--u) * 5.4); border-radius: 50%; background: var(--sw); border: calc(var(--u) * 0.4) solid rgba(58,38,22,0.45); padding: 0; }
+.swatch[aria-pressed="true"] { box-shadow: 0 0 0 calc(var(--u) * 0.45) var(--parch), 0 0 0 calc(var(--u) * 0.9) var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--u) * 1); }
+.tile { display: flex; align-items: center; justify-content: center; gap: calc(var(--u) * 0.8); min-height: calc(var(--u) * 7.4); padding: calc(var(--u) * 0.5) calc(var(--u) * 0.8); background: var(--parch-d); border: calc(var(--u) * 0.35) solid #c9a873; border-radius: calc(var(--u) * 1.2); }
+.tile canvas { width: calc(var(--u) * 4.6); height: calc(var(--u) * 4.6); flex: none; }
+.tile-zh { font-family: var(--zh); font-size: calc(var(--u) * 2.8); line-height: 1.2; color: var(--ink); white-space: nowrap; }
+.tile[aria-pressed="true"] { background: #e3f0c8; border-color: var(--leaf); }
+.tile:active, .swatch:active, .num:active { transform: scale(0.95); }
+
+.mirror-frame { padding: calc(var(--u) * 1.2); border-radius: 50% / 46%; background: linear-gradient(var(--wood-l), var(--wood)); border: calc(var(--u) * 0.45) solid var(--wood-d); }
+#mirror-cv { display: block; width: calc(var(--u) * 38); height: calc(var(--u) * 38); border-radius: 50% / 46%; touch-action: none; }
+.tabs { display: flex; gap: calc(var(--u) * 0.8); }
+.tabs button { flex: 1; background: var(--parch-d); border: calc(var(--u) * 0.35) solid #c9a873; border-radius: calc(var(--u) * 1.2); font-family: var(--zh); font-size: calc(var(--u) * 2.8); padding: calc(var(--u) * 0.3) 0; line-height: 1.2; }
+.tabs button[aria-selected="true"] { background: var(--wood); color: var(--parch); border-color: var(--wood-d); }
+.tabs rt { font-size: 0.42em; }
+.tabs button[aria-selected="true"] rt { color: #fff3cf; }
+
+.count-top { display: flex; align-items: center; justify-content: space-between; padding-right: calc(var(--u) * 6); }
+#count-next { width: calc(var(--u) * 6.4); height: calc(var(--u) * 6.4); border-radius: 50%; display: grid; place-items: center; padding: 0; }
+#count-next svg { width: 55%; height: 55%; }
+#count-next.ready { animation: nudge 0.9s ease-in-out infinite; background: linear-gradient(#8fd06a, var(--leaf)); border-color: var(--leaf-d); }
+@keyframes nudge { 50% { transform: translateX(calc(var(--u) * 0.8)) scale(1.08); } }
+.count-stage { position: relative; margin: calc(var(--u) * 1) auto; width: min(100%, calc(var(--u) * 64)); aspect-ratio: 160 / 80; max-width: 100%; }
+#card-zh.long { font-size: calc(var(--u) * 3.9); }
+#card { cursor: grab; touch-action: none; z-index: 1; }
+#card.dragging { cursor: grabbing; box-shadow: 0 0 0 calc(var(--u) * 0.25) var(--wood-d), 0 calc(var(--u) * 1.4) calc(var(--u) * 2) rgba(0,0,0,0.35); }
+.grip { align-self: stretch; width: calc(var(--u) * 1.2); margin-left: calc(var(--u) * -1.2); background: radial-gradient(circle, var(--wood) 30%, transparent 32%) 0 0 / calc(var(--u) * 0.6) calc(var(--u) * 0.6); opacity: 0.7; }
+#btn-bag { position: relative; }
+#btn-hud { width: calc(var(--u) * 4.6); opacity: 0.92; }
+#box.hud-off .hud > :not(#btn-hud), #box.hud-off #btn-parent { display: none; }
+#bag-count { position: absolute; top: calc(var(--u) * -0.9); right: calc(var(--u) * -0.9); min-width: calc(var(--u) * 2.6); height: calc(var(--u) * 2.6); border-radius: 999px; background: var(--berry); color: #fff; font-size: calc(var(--u) * 1.6); line-height: calc(var(--u) * 2.6); font-weight: 700; text-align: center; padding: 0 calc(var(--u) * 0.5); }
+#btn-bag.bump { animation: bump 0.4s cubic-bezier(.3,1.6,.5,1); }
+@keyframes bump { 40% { transform: scale(1.25); } }
+.bag-sheet { width: 74%; }
+.bag-empty { margin: 0 0 calc(var(--u) * 1); font-family: var(--zh); font-size: calc(var(--u) * 2.6); }
+.bag-empty small { display: block; font-family: var(--lat); font-size: calc(var(--u) * 1.5); color: var(--ink-soft); }
+.bag-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: calc(var(--u) * 1); margin: calc(var(--u) * 1) 0; }
+.slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(var(--u) * 0.2); min-height: calc(var(--u) * 11); background: var(--parch-d); border: calc(var(--u) * 0.35) solid #c9a873; border-radius: calc(var(--u) * 1.2); padding: calc(var(--u) * 0.4); }
+.slot canvas { width: calc(var(--u) * 6.5); height: calc(var(--u) * 6.5); }
+.slot.empty { background: rgba(238,220,176,0.45); border-style: dashed; }
+.slot[aria-pressed="true"] { background: #fff4c2; border-color: var(--sun); box-shadow: 0 0 0 calc(var(--u) * 0.3) #e8b02a; }
+.bag-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--u) * 1.2); }
+.act { display: flex; flex-direction: column; align-items: center; border-radius: calc(var(--u) * 1.4); border: calc(var(--u) * 0.4) solid rgba(0,0,0,0.25); padding: calc(var(--u) * 0.4) 0; font-family: var(--zh); font-size: calc(var(--u) * 3.6); line-height: 1.1; color: #fff; }
+.act rt { color: #fff; }
+.act small { font-family: var(--lat); font-size: 0.4em; opacity: 0.9; }
+.act-eat { background: var(--leaf); } .act-give { background: #e8a02a; } .act-throw { background: #4f86e0; } .act-take { background: #c9672a; }
+#choice { position: absolute; z-index: 2; transform: translate(-50%, -100%); display: flex; gap: calc(var(--u) * 1); animation: popc 0.25s cubic-bezier(.3,1.6,.5,1); }
+@keyframes popc { from { transform: translate(-50%, -100%) scale(0.5); } to { transform: translate(-50%, -100%) scale(1); } }
+#choice .act { min-width: calc(var(--u) * 8.5); box-shadow: 0 calc(var(--u) * 0.4) 0 rgba(0,0,0,0.3); }
+.map-label.on { background: #fff4c2; border-color: var(--sun); transform: translate(-50%, 0) scale(1.12); }
+.piano-sheet { width: 88%; }
+.piano-top { display: flex; align-items: center; gap: calc(var(--u) * 2); padding-right: calc(var(--u) * 6); }
+.piano-top .tabs { flex: 1; }
+.lyric { text-align: center; font-family: var(--zh); font-size: calc(var(--u) * 5); line-height: 1.3; margin: calc(var(--u) * 1) 0 0; color: #b9a98a; }
+.lyric ruby.done { color: var(--leaf-d); }
+.lyric ruby.now { color: var(--berry); text-decoration: underline; text-decoration-thickness: calc(var(--u) * 0.4); }
+.pkeys { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: calc(var(--u) * 0.7); margin-top: calc(var(--u) * 1.6); }
+.pkey { height: calc(var(--u) * 22); border-radius: 0 0 calc(var(--u) * 1.4) calc(var(--u) * 1.4); background: linear-gradient(#ffffff, #f3ecdc); border: calc(var(--u) * 0.4) solid var(--wood-d); border-top: calc(var(--u) * 1.6) solid var(--k); display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: calc(var(--u) * 0.4); padding: 0 0 calc(var(--u) * 1); touch-action: none; transition: transform 0.08s; }
+.pkey .pn { display: flex; flex-direction: column; align-items: center; font-family: var(--lat); font-size: calc(var(--u) * 4.2); font-weight: 700; line-height: 1; color: var(--k); }
+.pkey .dot { display: block; width: calc(var(--u) * 0.9); height: calc(var(--u) * 0.9); border-radius: 50%; background: currentColor; margin: calc(var(--u) * 0.3) 0; }
+.pkey small { font-size: calc(var(--u) * 1.6); color: var(--ink-soft); }
+.pkey.lit, .pkey.show { background: var(--k); transform: translateY(calc(var(--u) * 0.5)); }
+.pkey.lit .pn, .pkey.show .pn, .pkey.lit small, .pkey.show small { color: #ffffff; }
+.pkey.next { animation: keyglow 0.8s ease-in-out infinite; }
+@keyframes keyglow { 50% { box-shadow: 0 0 0 calc(var(--u) * 0.7) var(--sun); } }
+.pads { display: flex; justify-content: center; align-items: flex-end; gap: calc(var(--u) * 4); margin: calc(var(--u) * 2) 0 calc(var(--u) * 1); min-height: calc(var(--u) * 28); }
+.pad { border-radius: 50%; border: calc(var(--u) * 0.7) solid var(--wood-d); background: radial-gradient(circle at 50% 50%, #fffaf0 0 55%, var(--k) 56%); display: grid; place-items: center; padding: 0; font-family: var(--zh); color: var(--ink); touch-action: none; box-shadow: 0 calc(var(--u) * 0.8) 0 rgba(0,0,0,0.3); transition: transform 0.06s; }
+.pad-big { width: calc(var(--u) * 27); height: calc(var(--u) * 27); font-size: calc(var(--u) * 4.4); }
+.pad-small { width: calc(var(--u) * 18); height: calc(var(--u) * 18); font-size: calc(var(--u) * 3.4); }
+.pad-bell { width: calc(var(--u) * 14); height: calc(var(--u) * 14); font-size: calc(var(--u) * 2.8); }
+.pad.lit, .pad.show { transform: scale(0.92); background: radial-gradient(circle at 50% 50%, #fff4c2 0 55%, var(--k) 56%); }
+.pad.show { box-shadow: 0 0 0 calc(var(--u) * 0.8) var(--sun); }
+/* tas: gambar barang 2× lebih besar, tombol aksi di samping */
+.bag-sheet { width: 88%; padding-block: calc(var(--u) * 1.4); }
+.bag-sheet .bigword { font-size: calc(var(--u) * 4.2); }
+.bag-body { display: grid; grid-template-columns: minmax(0, 1fr) calc(var(--u) * 13); gap: calc(var(--u) * 2); align-items: center; }
+.bag-body .bag-grid { margin: 0; }
+.bag-body .bag-actions { grid-template-columns: 1fr; }
+.bag-sheet .slot { min-height: 0; padding: calc(var(--u) * 0.5) calc(var(--u) * 0.3); }
+.bag-sheet .slot canvas { width: calc(var(--u) * 13); height: calc(var(--u) * 13); }
+.bag-sheet .slot .tile-zh { font-size: calc(var(--u) * 2.3); }
+.bag-sheet .slot.empty { min-height: calc(var(--u) * 17); }
+/* tombol kanan atas: kamera, cerita, stiker, orang tua */
+.hud-right { position: absolute; top: calc(var(--u) * 1.4); right: calc(var(--u) * 1.4); display: flex; gap: calc(var(--u) * 1); align-items: center; }
+.hud-right #btn-parent { position: relative; top: auto; right: auto; }
+#box.hud-off .hud-right { display: none; }
+.hbtn svg { width: 70%; height: 70%; }
+#btn-stickers { position: relative; }
+#sticker-count { position: absolute; bottom: calc(var(--u) * -0.9); right: calc(var(--u) * -0.9); min-width: calc(var(--u) * 2.6); height: calc(var(--u) * 2.6); border-radius: 999px; background: var(--leaf); color: #fff; font-size: calc(var(--u) * 1.4); line-height: calc(var(--u) * 2.6); font-weight: 700; padding: 0 calc(var(--u) * 0.5); text-align: center; }
+#btn-stickers.bump { animation: bump 0.4s cubic-bezier(.3,1.6,.5,1); }
+#flash { position: absolute; inset: 0; z-index: 4; background: #ffffff; pointer-events: none; opacity: 0; }
+#flash.go { animation: flash 0.45s ease-out; }
+@keyframes flash { from { opacity: 0.95; } to { opacity: 0; } }
+/* buku stiker & foto */
+.sticker-sheet, .story-sheet { width: 90%; }
+.st-total { font-weight: 700; color: var(--wood); font-size: calc(var(--u) * 2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.st-nav { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--u) * 1.5); margin: calc(var(--u) * 1.2) 0; }
+.st-arrow { width: calc(var(--u) * 6); height: calc(var(--u) * 6); border-radius: 50%; display: grid; place-items: center; padding: 0; flex: none; }
+.st-arrow svg { width: 50%; height: 50%; }
+.st-arrow:disabled { opacity: 0.4; }
+.st-title { font-size: calc(var(--u) * 2.6); font-weight: 700; text-align: center; text-wrap: balance; }
+.st-title small { display: block; font-size: 0.6em; color: var(--ink-soft); font-weight: 400; }
+.st-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--u) * 10), 1fr)); gap: calc(var(--u) * 1.4); padding: calc(var(--u) * 0.6); }
+.stk { aspect-ratio: 1; border-radius: 50%; border: calc(var(--u) * 0.5) solid #ffffff; background: var(--c); box-shadow: 0 0 0 calc(var(--u) * 0.25) var(--c), 0 calc(var(--u) * 0.5) 0 rgba(0,0,0,0.25); color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: calc(var(--u) * 0.4); transform: rotate(-4deg); }
+.stk:nth-child(even) { transform: rotate(5deg); }
+.stk-zh { font-family: var(--zh); font-size: calc(var(--u) * 3.2); line-height: 1.1; }
+.stk.long .stk-zh { font-size: calc(var(--u) * 1.7); }
+.stk-py { font-size: calc(var(--u) * 1.3); font-weight: 700; }
+.stk.empty { background: transparent; border: calc(var(--u) * 0.35) dashed #c9a873; box-shadow: none; color: #c9a873; font-size: calc(var(--u) * 3); transform: none; }
+.stk.pic { background: #fff8ea; background: color-mix(in srgb, var(--c) 22%, #fffdf6); }
+.stk img { width: 80%; height: 80%; object-fit: contain; pointer-events: none; }
+.stk.empty img { opacity: 0.6; }
+.ph-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: calc(var(--u) * 1.2); margin-top: calc(var(--u) * 1); }
+.ph { padding: 0; border: calc(var(--u) * 0.4) solid #ffffff; background: #ffffff; box-shadow: 0 calc(var(--u) * 0.4) 0 rgba(0,0,0,0.25); transform: rotate(-2deg); }
+.ph:nth-child(even) { transform: rotate(2deg); }
+.ph img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.ph-empty { font-size: calc(var(--u) * 1.8); color: var(--ink-soft); }
+#ph-img { display: block; width: 100%; max-height: calc(var(--u) * 34); object-fit: contain; margin-top: calc(var(--u) * 1); }
+.ph-tools { display: flex; justify-content: space-between; align-items: center; margin-top: calc(var(--u) * 1); }
+/* cerita */
+.story-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--u) * 1.6); padding-right: calc(var(--u) * 5); }
+.story-cover { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 0.4); background: var(--parch-d); border: calc(var(--u) * 0.35) solid #c9a873; border-radius: calc(var(--u) * 1.2); padding: calc(var(--u) * 0.8); }
+.story-cover canvas { width: 100%; aspect-ratio: 16 / 9; border-radius: calc(var(--u) * 0.8); }
+.story-title { font-family: var(--zh); font-size: calc(var(--u) * 2.6); line-height: 1.2; }
+.story-cover small { font-size: calc(var(--u) * 1.4); color: var(--ink-soft); }
+/* pemutar video cerita */
+.story-cover { position: relative; }
+.play-badge { position: absolute; left: 50%; top: 32%; transform: translate(-50%, -50%); width: calc(var(--u) * 6); height: calc(var(--u) * 6); border-radius: 50%; background: rgba(20,16,30,0.6); border: calc(var(--u) * 0.3) solid #ffffff; display: grid; place-items: center; }
+.play-badge svg { width: 55%; height: 55%; margin-left: 10%; }
+.video { position: relative; width: min(100%, calc(var(--u) * 74)); margin: 0 auto; border-radius: calc(var(--u) * 1); overflow: hidden; border: calc(var(--u) * 0.4) solid var(--wood-d); background: #14101e; }
+#story-cv { display: block; width: 100%; aspect-ratio: 16 / 9; }
+.video-title { position: absolute; left: calc(var(--u) * 1); top: calc(var(--u) * 0.6); font-family: var(--zh); font-size: calc(var(--u) * 2.2); color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.7); }
+.video-title rt { color: #fff3cf; }
+.video-sub { position: absolute; left: 0; right: 0; bottom: 0; padding: calc(var(--u) * 0.6) calc(var(--u) * 1) calc(var(--u) * 0.8); text-align: center; background: linear-gradient(transparent, rgba(20,16,30,0.75)); color: #ffffff; }
+.video-sub #story-zh { font-size: calc(var(--u) * 3.6); color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+.video-sub #story-zh rt { text-shadow: none; filter: brightness(1.5); }
+.video-sub #story-id { color: #f4e8cc; }
+.video-bar { display: flex; align-items: center; gap: calc(var(--u) * 1.2); width: min(100%, calc(var(--u) * 74)); margin: calc(var(--u) * 1) auto 0; }
+.video-track { flex: 1; height: calc(var(--u) * 1.2); border-radius: 999px; background: var(--parch-d); overflow: hidden; }
+#story-progress { height: 100%; width: 0; background: var(--leaf); }
+#story-play svg { width: 50%; height: 50%; }
+.story-bar { display: flex; align-items: center; gap: calc(var(--u) * 1.2); margin-top: calc(var(--u) * 1); }
+.story-text { flex: 1; text-align: center; min-width: 0; }
+#story-zh { font-family: var(--zh); font-size: calc(var(--u) * 3.8); line-height: 1.3; }
+#story-id { font-size: calc(var(--u) * 1.6); color: var(--ink-soft); }
+#story-page { font-size: calc(var(--u) * 1.2); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.say-btn { width: calc(var(--u) * 6); height: calc(var(--u) * 6); border-radius: 50%; border: calc(var(--u) * 0.4) solid var(--leaf-d); background: var(--leaf); display: grid; place-items: center; padding: 0; flex: none; }
+.say-btn svg { width: 58%; height: 58%; }
+/* kostum terkunci & suara keluarga */
+.tile.locked { opacity: 0.6; }
+.tile .need { font-size: calc(var(--u) * 1.3); color: var(--ink-soft); }
+.voice-set p { margin: 0; }
+.voice-row { display: flex; flex-wrap: wrap; gap: 0.6em; align-items: center; }
+.filebtn { position: relative; overflow: hidden; background: var(--berry); color: #ffffff; border-radius: 0.6em; padding: 0.35em 0.9em; cursor: pointer; }
+.filebtn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+#voice-play { background: var(--leaf); color: #ffffff; border: 0; border-radius: 0.6em; padding: 0.35em 0.9em; }
+.voice-msg { color: var(--leaf-d); }
+.settings select, .settings input[type="date"] { font: inherit; max-width: 100%; }
+/* mode irama drum */
+.rhythm { position: relative; margin-top: calc(var(--u) * 1); }
+#rhythm-cv { display: block; width: 100%; height: calc(var(--u) * 17); border-radius: calc(var(--u) * 1); }
+#rhythm-start { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: calc(var(--u) * 0.4) calc(var(--u) * 3); }
+#p-drum.rhythm-on .pads { min-height: 0; margin-top: calc(var(--u) * 0.8); }
+#p-drum.rhythm-on .pad-big { width: calc(var(--u) * 15); height: calc(var(--u) * 15); font-size: calc(var(--u) * 3.2); }
+#p-drum.rhythm-on .pad-small { width: calc(var(--u) * 13); height: calc(var(--u) * 13); font-size: calc(var(--u) * 2.8); }
+#p-drum.rhythm-on .pad-bell { width: calc(var(--u) * 11.5); height: calc(var(--u) * 11.5); font-size: calc(var(--u) * 2.4); }
+#p-drum.rhythm-on .pads { gap: calc(var(--u) * 9); }
+/* menu atas semi transparan supaya tidak menutupi game */
+.hud, .hud-right { opacity: 0.5; transition: opacity 0.2s; }
+.hud:hover, .hud:focus-within, .hud-right:hover, .hud-right:focus-within { opacity: 1; }
+.count-tabs { flex: 0 1 auto; }
+.count-tabs button { padding: calc(var(--u) * 0.3) calc(var(--u) * 1.6); }
+.count-quiz { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--u) * 2); }
+.choices { display: flex; gap: calc(var(--u) * 1.4); }
+.num.big { font-size: calc(var(--u) * 4.4); min-width: calc(var(--u) * 10); padding: calc(var(--u) * 0.4) calc(var(--u) * 1); }
+.num.right { background: #e3f0c8; border-color: var(--leaf); }
+.num.wrong { opacity: 0.4; }
+#flower-back { align-self: flex-start; padding: calc(var(--u) * 0.3) calc(var(--u) * 2); font-size: calc(var(--u) * 3); }
+.link-btn { justify-self: start; background: none; border: 0; padding: 0; color: var(--wood); text-decoration: underline; }
+.latin { font-family: var(--lat); font-weight: 700; font-size: 0.8em; margin: 0 0.1em; }
+.punct { font-size: 0.9em; }
+.stars { display: flex; gap: calc(var(--u) * 0.8); }
+.fstar { width: calc(var(--u) * 4.6); height: calc(var(--u) * 4.6); background: #d9c9a6; clip-path: polygon(50% 0, 62% 35%, 100% 38%, 70% 60%, 80% 98%, 50% 76%, 20% 98%, 30% 60%, 0 38%, 38% 35%); }
+.fstar.on { background: var(--sun); filter: drop-shadow(0 0 2px #c99a1c); }
+.map-sheet { width: 84%; padding: calc(var(--u) * 1.2); }
+.map-stage { position: relative; width: 100%; aspect-ratio: 160 / 90; }
+#map-cv { width: 100%; height: 100%; border-radius: calc(var(--u) * 1); border: calc(var(--u) * 0.4) solid var(--wood-d); touch-action: none; }
+#map-labels { position: absolute; inset: 0; pointer-events: none; }
+.map-label { position: absolute; transform: translate(-50%, 0); pointer-events: auto; background: var(--parch-glass); border: calc(var(--u) * 0.3) solid var(--wood); border-radius: calc(var(--u) * 1); padding: 0 calc(var(--u) * 0.8); font-family: var(--zh); font-size: calc(var(--u) * 2.4); line-height: 1.15; color: var(--ink); white-space: nowrap; }
+#count-cv { width: 100%; height: 100%; border-radius: calc(var(--u) * 1.2); border: calc(var(--u) * 0.4) solid #d9bf86; touch-action: none; }
+#count-badges { position: absolute; inset: 0; pointer-events: none; }
+.badge { position: absolute; transform: translate(-50%, -50%); font-family: var(--zh); font-size: calc(var(--u) * 3.2); color: #fff; background: var(--berry); border: calc(var(--u) * 0.25) solid #fff; border-radius: calc(var(--u) * 1.2); min-width: 1.4em; text-align: center; padding: 0 calc(var(--u) * 0.4); line-height: 1.3; animation: pop2 0.3s cubic-bezier(.3,1.6,.5,1); }
+@keyframes pop2 { from { transform: translate(-50%, -50%) scale(0.4); } to { transform: translate(-50%, -50%) scale(1); } }
+.numrow { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: calc(var(--u) * 0.6); }
+.num { display: flex; flex-direction: column; align-items: center; background: var(--parch-d); border: calc(var(--u) * 0.3) solid #c9a873; border-radius: calc(var(--u) * 1); padding: calc(var(--u) * 0.2) 0; font-family: var(--zh); font-size: calc(var(--u) * 2.8); line-height: 1.15; }
+.num small { font-family: var(--lat); font-size: 0.45em; color: var(--ink-soft); }
+
+/* Halaman orang tua */
+.doc { font-size: max(13px, calc(var(--u) * 1.5)); line-height: 1.5; color: var(--ink); -webkit-user-select: text; user-select: text; }
+.doc h2 { font-size: 1.6em; margin: 0 0 0.2em; line-height: 1.2; text-wrap: balance; }
+.doc .lead { margin: 0 0 1em; max-width: 62ch; color: var(--ink-soft); }
+.settings { display: grid; gap: 0.5em; padding: 0.9em 1em; background: var(--parch-d); border-radius: 0.8em; margin-bottom: 1.2em; }
+.settings label { display: flex; gap: 0.6em; align-items: center; }
+.settings input { width: 1.2em; height: 1.2em; accent-color: var(--leaf); }
+.settings .set-note { margin: -0.3em 0 0.3em; font-size: 0.85em; color: var(--ink-soft); }
+#voice-status { margin: 0; }
+#voice-status.warn { color: #9a2f22; }
+#voice-test { justify-self: start; background: var(--leaf); color: #fff; border: 0; border-radius: 0.6em; padding: 0.35em 0.9em; }
+#theme-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22em), 1fr)); gap: 1em 1.4em; }
+.theme h3 { margin: 0; font-size: 1.05em; display: flex; gap: 0.5em; align-items: baseline; }
+.theme-no { font-size: 0.8em; color: var(--wood); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+.theme p { margin: 0.15em 0 0.5em; color: var(--ink-soft); font-size: 0.9em; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.35em; }
+.chip { display: inline-flex; align-items: baseline; gap: 0.35em; background: #fffaf0; border: 1px solid #d9bf86; border-radius: 0.6em; padding: 0.15em 0.55em; }
+.chip-zh { font-family: var(--zh); font-size: 1.2em; }
+.chip-py { font-weight: 700; color: var(--wood); font-size: 0.9em; }
+.chip-id { color: var(--ink-soft); font-size: 0.85em; }
+
+/* Layar judul */
+#title { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(rgba(20,30,16,0.05), rgba(20,30,16,0.35)); }
+.sign { text-align: center; padding: calc(var(--u) * 2.4) calc(var(--u) * 5) calc(var(--u) * 2.6); border-radius: calc(var(--u) * 2); color: var(--parch); }
+.sign.wood { background: linear-gradient(var(--wood-glass-l), var(--wood-glass)); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.sign h1 { margin: 0; font-family: var(--zh); font-weight: 400; font-size: calc(var(--u) * 7.4); line-height: 1.25; text-shadow: 0 calc(var(--u) * 0.4) 0 var(--wood-d); }
+.sign h1 rt { color: #fff3cf; font-size: 0.32em; text-shadow: none; }
+.sign p { margin: calc(var(--u) * 0.4) 0 calc(var(--u) * 1.8); font-size: calc(var(--u) * 1.9); color: #fbe7bd; }
+#play { width: calc(var(--u) * 11); height: calc(var(--u) * 11); border-radius: 50%; border: calc(var(--u) * 0.6) solid var(--leaf-d); background: linear-gradient(#8fd06a, var(--leaf)); display: inline-grid; place-items: center; padding: 0; box-shadow: 0 calc(var(--u) * 0.5) 0 rgba(0,0,0,0.35); animation: breathe 2.4s ease-in-out infinite; }
+#play svg { width: 46%; height: 46%; margin-left: 8%; }
+@keyframes breathe { 50% { transform: scale(1.06); } }
+.sign .hint { margin: calc(var(--u) * 1.6) auto 0; font-size: calc(var(--u) * 1.4); color: #e9d3a6; max-width: 46em; }
+.sign .warn-hint { margin-top: calc(var(--u) * 0.6); color: #ffd28a; }
+#rotate { position: absolute; left: 0; right: 0; bottom: max(16px, env(safe-area-inset-bottom, 0px)); text-align: center; color: #e9d3a6; font-size: 15px; padding-inline: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  #play, #count-next.ready, #card.pop, .bubble, .badge { animation: none; }
+}
+</style>
+
+<div id="stage">
+  <div id="box">
+    <canvas id="game" aria-label="Desa Ān'ān. Ketuk tanah untuk berjalan, ketuk benda, hewan, atau orang untuk mendengar kata Mandarin."></canvas>
+    <div id="bubbles"></div>
+    <div id="choice" hidden></div>
+
+    <div class="hud">
+      <button class="hbtn wood" id="btn-hud" type="button" aria-label="Tutup menu" aria-expanded="true"></button>
+      <button class="hbtn wood" id="btn-time" type="button" aria-label="Ganti pagi atau malam"></button>
+      <button class="hbtn wood" id="btn-weather" type="button" aria-label="Ganti cuaca"></button>
+      <button class="hbtn wood" id="btn-music" type="button" aria-label="Musik nyala atau mati"></button>
+      <button class="hbtn wood" id="btn-map" type="button" aria-label="Buka peta"></button>
+      <button class="hbtn wood" id="btn-bag" type="button" aria-label="Buka tas"><span id="bag-count" hidden></span></button>
+      <button class="wood" id="place" type="button"></button>
+    </div>
+    <div class="hud-right">
+      <button class="hbtn wood" id="btn-camera" type="button" aria-label="Ambil foto"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="4" width="14" height="10" rx="2" fill="#fff6e0"/><rect x="5" y="2" width="6" height="3" fill="#fff6e0"/><circle cx="8" cy="9" r="3.4" fill="#4f86e0"/><circle cx="8" cy="9" r="1.6" fill="#bfe3f2"/><rect x="11.5" y="5.5" width="2" height="1.5" fill="#e2483d"/></svg></button>
+      <button class="hbtn wood" id="btn-story" type="button" aria-label="Buka cerita"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3c2.5-1 5-1 7 1v10c-2-2-4.5-2-7-1z" fill="#fff6e0"/><path d="M15 3c-2.5-1-5-1-7 1v10c2-2 4.5-2 7-1z" fill="#f4cf3a"/><path d="M3 6h3M3 8h3M10 6h3M10 8h3" stroke="#a8743c" stroke-width="0.8"/></svg></button>
+      <button class="hbtn wood" id="btn-stickers" type="button" aria-label="Buka buku stiker"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4 4.4.5-3.3 3 .9 4.4L8 11.2l-3.9 2.2.9-4.4-3.3-3 4.4-.5z" fill="#ffd84a" stroke="#c99a1c" stroke-width="0.8"/></svg><span id="sticker-count">0</span></button>
+      <button class="wood" id="btn-parent" type="button" aria-label="Menu orang tua, tahan satu detik">Orang tua<small>tahan</small></button>
+    </div>
+    <div id="flash" hidden></div>
+
+    <div id="card" hidden>
+      <span class="grip" aria-hidden="true"></span>
+      <div class="card-text"><div id="card-zh"></div><div id="card-id"></div></div>
+      <button id="card-say" type="button" aria-label="Dengar lagi"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+    </div>
+
+    <section class="panel" id="p-flower" hidden>
+      <div class="sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="two">
+          <canvas id="flower-cv" width="384" height="448"></canvas>
+          <div class="side">
+            <div class="tabs" role="tablist">
+              <button type="button" role="tab" data-mode="look" aria-label="Lihat bagian bunga"><ruby>看<rt class="t4">kàn</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>看<rt class="t4">kàn</rt></ruby></button>
+              <button type="button" role="tab" data-mode="grow" aria-label="Tanam bunga"><ruby>种<rt class="t4">zhòng</rt></ruby><ruby>花<rt class="t1">huā</rt></ruby></button>
+              <button type="button" role="tab" data-mode="find" aria-label="Cari bagian bunga"><ruby>找<rt class="t3">zhǎo</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>找<rt class="t3">zhǎo</rt></ruby></button>
+            </div>
+            <button class="bigword" id="flower-title" type="button"><ruby>花<rt class="t1">huā</rt></ruby></button>
+            <button class="act act-throw" id="flower-back" type="button" hidden><span><ruby>返<rt class="t3">fǎn</rt></ruby><ruby>回<rt class="t2">huí</rt></ruby></span><small>kembali ke bunga</small></button>
+            <div class="swatches" id="swatches"></div>
+            <div class="grid" id="flower-parts"></div>
+            <div class="stars" id="flower-stars" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-mirror" hidden>
+      <div class="sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="two">
+          <div class="mirror-frame"><canvas id="mirror-cv" width="320" height="320"></canvas></div>
+          <div class="side">
+            <div class="tabs" role="tablist">
+              <button type="button" role="tab" data-tab="body" aria-label="Tubuh"><ruby>身<rt class="t1">shēn</rt></ruby><ruby>体<rt class="t3">tǐ</rt></ruby></button>
+              <button type="button" role="tab" data-tab="clothes" aria-label="Pakaian"><ruby>衣<rt class="t1">yī</rt></ruby><ruby>服<rt class="t5">fu</rt></ruby></button>
+              <button type="button" role="tab" data-tab="feel" aria-label="Perasaan"><ruby>心<rt class="t1">xīn</rt></ruby><ruby>情<rt class="t2">qíng</rt></ruby></button>
+            </div>
+            <div class="grid" id="mirror-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-count" hidden>
+      <div class="sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="count-top">
+          <button class="bigword" id="count-title" type="button"><ruby>数<rt class="t3">shǔ</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>数<rt class="t3">shǔ</rt></ruby></button>
+          <div class="tabs count-tabs" role="tablist">
+            <button type="button" role="tab" data-cmode="tap" aria-label="Hitung satu per satu"><ruby>数<rt class="t3">shǔ</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>数<rt class="t3">shǔ</rt></ruby></button>
+            <button type="button" role="tab" data-cmode="quiz" aria-label="Tebak jumlah"><ruby>有<rt class="t3">yǒu</rt></ruby><ruby>几<rt class="t3">jǐ</rt></ruby><ruby>个<rt class="t4">gè</rt></ruby>？</button>
+          </div>
+          <button class="wood" id="count-next" type="button" aria-label="Soal berikutnya"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1.5l6 3.5-6 3.5z" fill="#fff"/></svg></button>
+        </div>
+        <div class="count-stage"><canvas id="count-cv" width="160" height="80"></canvas><div id="count-badges"></div></div>
+        <div class="numrow" id="numrow"></div>
+        <div class="count-quiz" id="count-quiz" hidden><div class="stars" id="count-stars"></div><div class="choices" id="count-choices"></div></div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-map" hidden>
+      <div class="sheet map-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="map-stage"><canvas id="map-cv" width="160" height="90"></canvas><div id="map-labels"></div></div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-piano" hidden>
+      <div class="sheet piano-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="piano-top">
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" data-pmode="free" aria-label="Main bebas"><ruby>弹<rt class="t2">tán</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>弹<rt class="t2">tán</rt></ruby></button>
+            <button type="button" role="tab" data-pmode="follow" aria-label="Tiru nada"><ruby>跟<rt class="t1">gēn</rt></ruby><ruby>我<rt class="t3">wǒ</rt></ruby><ruby>弹<rt class="t2">tán</rt></ruby></button>
+            <button type="button" role="tab" data-pmode="song" aria-label="Lagu Dua Harimau"><ruby>唱<rt class="t4">chàng</rt></ruby><ruby>歌<rt class="t1">gē</rt></ruby></button>
+          </div>
+          <div class="stars" id="piano-stars" hidden></div>
+        </div>
+        <div class="lyric" id="piano-lyric" hidden></div>
+        <div class="pkeys" id="piano-keys"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-stickers" hidden>
+      <div class="sheet sticker-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="piano-top">
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" data-stab="stickers" aria-label="Stiker"><ruby>贴<rt class="t1">tiē</rt></ruby><ruby>纸<rt class="t3">zhǐ</rt></ruby><ruby>本<rt class="t3">běn</rt></ruby></button>
+            <button type="button" role="tab" data-stab="photos" aria-label="Foto"><ruby>照<rt class="t4">zhào</rt></ruby><ruby>片<rt class="t4">piàn</rt></ruby></button>
+          </div>
+          <div class="st-total" id="st-total"></div>
+        </div>
+        <div id="st-pages">
+          <div class="st-nav">
+            <button class="wood st-arrow" id="st-prev" type="button" aria-label="Halaman sebelumnya"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M7 1.5L2 5l5 3.5z" fill="#fff"/></svg></button>
+            <div class="st-title" id="st-title"></div>
+            <button class="wood st-arrow" id="st-next" type="button" aria-label="Halaman berikutnya"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1.5L8 5 3 8.5z" fill="#fff"/></svg></button>
+          </div>
+          <div class="st-grid" id="st-grid"></div>
+        </div>
+        <div id="ph-pages" hidden>
+          <p class="ph-empty" id="ph-empty">Belum ada foto. Tekan tombol kamera di kanan atas untuk memotret Russel.</p>
+          <div class="ph-grid" id="ph-grid"></div>
+        </div>
+        <div id="ph-view" hidden>
+          <img id="ph-img" alt="Foto">
+          <div class="ph-tools"><button class="act act-throw" id="ph-back" type="button"><span><ruby>返<rt class="t3">fǎn</rt></ruby><ruby>回<rt class="t2">huí</rt></ruby></span><small>kembali</small></button><button class="link-btn" id="ph-del" type="button">Hapus foto ini</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-story" hidden>
+      <div class="sheet story-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="story-list" id="story-list"></div>
+        <div id="story-view" hidden>
+          <div class="video">
+            <canvas id="story-cv" width="1280" height="720"></canvas>
+            <div class="video-title" id="story-title"></div>
+            <div class="video-sub"><div id="story-zh"></div><div id="story-id"></div></div>
+          </div>
+          <div class="video-bar">
+            <button class="wood st-arrow" id="story-back" type="button" aria-label="Kembali ke daftar cerita"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 2h7M1.5 5h7M1.5 8h7" stroke="#fff" stroke-width="1.4"/></svg></button>
+            <button class="say-btn" id="story-play" type="button" aria-label="Jeda"></button>
+            <div class="video-track"><div id="story-progress"></div></div>
+            <button class="wood st-arrow" id="story-replay" type="button" aria-label="Putar dari awal"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 1.5a3.5 3.5 0 1 1-3.3 2.3" stroke="#fff" stroke-width="1.3" fill="none"/><path d="M0.6 1.6l1.4 2.6 2.4-1.4z" fill="#fff"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-drum" hidden>
+      <div class="sheet piano-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="piano-top">
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" data-dmode="free" aria-label="Main bebas"><ruby>打<rt class="t3">dǎ</rt></ruby><ruby>一<rt class="t5">yi</rt></ruby><ruby>打<rt class="t3">dǎ</rt></ruby></button>
+            <button type="button" role="tab" data-dmode="follow" aria-label="Tiru irama"><ruby>跟<rt class="t1">gēn</rt></ruby><ruby>我<rt class="t3">wǒ</rt></ruby><ruby>打<rt class="t3">dǎ</rt></ruby></button>
+            <button type="button" role="tab" data-dmode="count" aria-label="Pukul sesuai jumlah"><ruby>打<rt class="t3">dǎ</rt></ruby><ruby>几<rt class="t3">jǐ</rt></ruby><ruby>下<rt class="t4">xià</rt></ruby></button>
+            <button type="button" role="tab" data-dmode="rhythm" aria-label="Ikuti irama"><ruby>跟<rt class="t1">gēn</rt></ruby><ruby>节<rt class="t2">jié</rt></ruby><ruby>奏<rt class="t4">zòu</rt></ruby></button>
+          </div>
+          <div class="stars" id="drum-stars" hidden></div>
+        </div>
+        <div class="rhythm" id="rhythm" hidden>
+          <canvas id="rhythm-cv" width="600" height="190"></canvas>
+          <button class="act act-eat" id="rhythm-start" type="button"><span><ruby>开<rt class="t1">kāi</rt></ruby><ruby>始<rt class="t3">shǐ</rt></ruby></span><small>mulai</small></button>
+        </div>
+        <div class="pads" id="drum-pads"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-bag" hidden>
+      <div class="sheet bag-sheet">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <button class="bigword" id="bag-title" type="button"><ruby>书<rt class="t1">shū</rt></ruby><ruby>包<rt class="t1">bāo</rt></ruby></button>
+        <p class="bag-empty" id="bag-empty"><ruby>书<rt class="t1">shū</rt></ruby><ruby>包<rt class="t1">bāo</rt></ruby><ruby>是<rt class="t4">shì</rt></ruby><ruby>空<rt class="t1">kōng</rt></ruby><ruby>的<rt class="t5">de</rt></ruby> <small>Tasnya masih kosong. Ketuk apel, telur, sayur, kerang, jamur, atau bunga liar untuk mengambilnya.</small></p>
+        <div class="bag-body">
+        <div class="bag-grid" id="bag-grid"></div>
+        <div class="bag-actions" id="bag-actions">
+          <button type="button" class="act act-eat" data-act="eat"><ruby>吃<rt class="t1">chī</rt></ruby><small>makan</small></button>
+          <button type="button" class="act act-give" data-act="give"><ruby>给<rt class="t3">gěi</rt></ruby><small>beri</small></button>
+          <button type="button" class="act act-throw" data-act="throw"><ruby>扔<rt class="t1">rēng</rt></ruby><small>lempar</small></button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-parent" hidden>
+      <div class="sheet doc">
+        <button class="close" data-close type="button" aria-label="Tutup"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <h2>Untuk Orang Tua</h2>
+        <p class="lead">Anak cukup mengetuk: tanah untuk berjalan, lalu hewan, orang, makanan, bunga, dan kendaraan untuk mendengar katanya. Tidak ada skor atau kalah. Ada <span id="word-total">0</span> kata. Warna pinyin menunjukkan nada: <b class="t1">nada 1</b>, <b class="t2">nada 2</b>, <b class="t3">nada 3</b>, <b class="t4">nada 4</b>, <b class="t5">netral</b>.</p>
+        <div class="settings">
+          <label>Bahasa yang dipelajari
+            <select id="set-lang">
+              <option value="zh">Mandarin (中文)</option>
+              <option value="en">English</option>
+              <option value="ja">Jepang (日本語)</option>
+            </select>
+          </label>
+          <p class="set-note">Semua kata, kalimat, lagu, dan cerita ikut berganti. Game dimulai ulang dari layar judul; tas, stiker, dan foto tetap tersimpan.</p>
+          <label><input type="checkbox" id="set-music"> Musik latar yang tenang</label>
+          <label><input type="checkbox" id="set-id"> Ucapkan juga arti dalam Bahasa Indonesia</label>
+          <label><input type="checkbox" id="set-hd"> Gambar halus (2× lebih tajam; matikan jika perangkat terasa lambat)</label>
+          <button id="card-reset" type="button" class="link-btn">Kembalikan kartu kata ke posisi awal</button>
+          <label>Hari raya
+            <select id="set-fest">
+              <option value="auto">Otomatis menurut tanggal</option>
+              <option value="none">Tidak ada</option>
+              <option value="cny">Coba lihat: Imlek</option>
+              <option value="midautumn">Coba lihat: Festival Kue Bulan</option>
+              <option value="birthday">Coba lihat: Ulang tahun</option>
+            </select>
+          </label>
+          <label>Tanggal ulang tahun Russel <input type="date" id="set-bday"></label>
+        </div>
+        <div class="settings voice-set">
+          <b>Suara keluarga</b>
+          <p>Rekam suara Ayah, Ibu, atau Kakek-Nenek mengucapkan satu kata. Game memakai rekaman itu, bukan suara komputer. Di ponsel, tombol di bawah membuka aplikasi perekam; rekaman tersimpan di perangkat ini saja.</p>
+          <label>Kata <select id="voice-word"></select></label>
+          <div class="voice-row">
+            <label class="filebtn">Rekam / pilih file<input type="file" id="voice-file" accept="audio/*" capture></label>
+            <button id="voice-play" type="button">Putar</button>
+            <button id="voice-del" type="button" class="link-btn">Hapus rekaman</button>
+          </div>
+          <p id="voice-msg" class="voice-msg"></p>
+          <p id="voice-list"></p>
+          <p id="voice-status"></p>
+          <button id="voice-test" type="button">Coba suara</button>
+        </div>
+        <div id="theme-list"></div>
+      </div>
+    </section>
+
+    <div id="title">
+      <div class="sign wood">
+        <h1><span class="latin">Russel</span><ruby>的<rt>de</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>村<rt>cūn</rt></ruby><ruby>子<rt>zi</rt></ruby></h1>
+        <p>Desa kecil Russel. Main sambil belajar Mandarin.</p>
+        <button id="play" type="button" aria-label="Mulai main"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></button>
+        <p class="hint">Nyalakan suara perangkat. Menu orang tua: tahan tombol di kanan atas.</p>
+        <p class="hint warn-hint" id="voice-hint" hidden>Browser ini belum punya suara Mandarin, jadi kata hanya tampil sebagai tulisan. Buka di Chrome, Edge, Android, atau iPad untuk mendengar suaranya.</p>
+      </div>
+    </div>
+  </div>
+  <p id="rotate" hidden>Putar ponsel ke posisi mendatar supaya gambarnya lebih besar.</p>
+</div>
+
+<script src="data.js"></script>
+<script src="lang.js"></script>
+<script src="audio.js"></script>
+<script src="art.js"></script>
+<script src="art2.js"></script>
+<script src="art3.js"></script>
+<script src="art4.js"></script>
+<script src="art5.js"></script>
+<script src="scenes.js"></script>
+<script src="scenes2.js"></script>
+<script src="scenes3.js"></script>
+<script src="game.js"></script>
+<script src="ui.js"></script>
+<script src="music.js"></script>
+<script src="drum.js"></script>
+<script src="extras.js"></script>
+<script src="story.js"></script>
+<script src="pwa.js"></script>
